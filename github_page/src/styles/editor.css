@@ -1,0 +1,174 @@
+.post-editor {
+  display: grid;
+  gap: 20px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.post-editor label {
+  color: var(--text-strong);
+  display: grid;
+  font-size: 14px;
+  font-weight: 800;
+  gap: 8px;
+}
+
+.editor-field {
+  color: var(--text-strong);
+  display: grid;
+  font-size: 14px;
+  font-weight: 800;
+  gap: 8px;
+}
+
+.post-editor input,
+.post-editor textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-strong);
+  font: inherit;
+  line-height: 1.5;
+  padding: 12px 14px;
+  resize: vertical;
+  width: 100%;
+}
+
+.post-editor input:focus,
+.post-editor textarea:focus,
+.rich-toolbar select:focus,
+.rich-toolbar button:focus-visible {
+  border-color: var(--accent);
+  outline: 3px solid rgba(15, 143, 132, 0.16);
+  outline-offset: 1px;
+}
+
+.rich-editor {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: visible;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.rich-editor.is-dragging {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(15, 143, 132, 0.16);
+}
+
+.rich-toolbar {
+  align-items: center;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 12px;
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+}
+
+.rich-toolbar button,
+.rich-toolbar select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-strong);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  min-height: 34px;
+  padding: 0 10px;
+}
+
+.rich-toolbar button {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  line-height: 1;
+}
+
+.rich-toolbar button:hover,
+.rich-toolbar select:hover {
+  background: var(--surface-hover);
+}
+
+.rich-toolbar label {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 7px;
+}
+
+.rich-toolbar input[type='color'] {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  height: 34px;
+  min-width: 42px;
+  padding: 3px;
+  width: 42px;
+}
+
+.rich-toolbar input[type='file'] {
+  display: none;
+}
+
+.rich-editor-surface {
+  background: var(--bg);
+  border-radius: 0 0 8px 8px;
+  color: var(--text-strong);
+  font-weight: 500;
+  line-height: 1.75;
+  min-height: 360px;
+  outline: none;
+  padding: 28px;
+}
+
+.rich-editor-surface:empty::before {
+  color: var(--text-muted);
+  content: '본문을 입력하거나 이미지를 여러 장 드래그해 추가해 보세요.';
+}
+
+.editor-image-block {
+  margin: 20px 0;
+}
+
+.editor-image-block img,
+.rich-editor-surface img,
+.post-body img {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.rich-editor-surface p,
+.post-body p {
+  margin: 0 0 16px;
+}
+
+.form-error {
+  color: #b42318;
+  font-size: 13px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.editor-reset {
+  justify-self: start;
+}

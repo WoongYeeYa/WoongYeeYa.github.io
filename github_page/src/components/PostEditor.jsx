@@ -26,6 +26,10 @@ function createExcerpt(form) {
   return form.excerpt || form.content.slice(0, 90)
 }
 
+function hasBodyContent(form) {
+  return form.content.trim() || form.contentHtml.includes('<img')
+}
+
 export function PostEditor({ editingPost, onCancel, onSave }) {
   const [form, setForm] = useState(() => ({
     ...createEmptyPost(),
@@ -53,8 +57,8 @@ export function PostEditor({ editingPost, onCancel, onSave }) {
   function handleSubmit(event) {
     event.preventDefault()
 
-    if (!form.content.trim()) {
-      setError('본문을 입력해 주세요.')
+    if (!hasBodyContent(form)) {
+      setError('본문을 입력하거나 이미지를 추가해 주세요.')
       return
     }
 

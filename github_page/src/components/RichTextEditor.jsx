@@ -1,19 +1,34 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-const fontSizes = [
-  { label: '작게', value: '2' },
-  { label: '보통', value: '3' },
-  { label: '크게', value: '5' },
-  { label: '제목', value: '7' },
-]
+const fontSizes = ['12px', '14px', '16px', '18px', '20px', '24px', '32px']
 
 function normalizeHtml(html) {
   return html || ''
 }
 
+function escapeAttribute(value) {
+  return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;')
+}
+
+function readImage(file) {
+  return new Promise((resolve) => {
+    const reader = new FileReader()
+
+    reader.onload = () => {
+      resolve({
+        alt: file.name,
+        src: reader.result,
+      })
+    }
+
+    reader.readAsDataURL(file)
+  })
+}
+
 export function RichTextEditor({ onChange, value }) {
   const editorRef = useRef(null)
   const fileInputRef = useRef(null)
+  const [isDragging, setIsDragging] = useState(false)
 
   useEffect(() => {
     if (editorRef.current && editorRef.current.innerHTML !== normalizeHtml(value)) {
@@ -38,31 +53,71 @@ export function RichTextEditor({ onChange, value }) {
     emitChange()
   }
 
-  function handleImageUpload(event) {
-    const file = event.target.files?.[0]
+  function applyFontSize(size) {
+    editorRef.current?.focus()
+    document.execCommand('fontSize', false, '7')
 
-    if (!file) {
+    editorRef.current?.querySelectorAll('font[size="7"]').forEach((font) => {
+      font.removeAttribute('size')
+      font.style.fontSize = size
+    })
+
+    emitChange()
+  }
+
+  async function insertImages(fileList) {
+    const imageFiles = [...fileList].filter((file) => file.type.startsWith('image/'))
+
+    if (imageFiles.length === 0) {
       return
     }
 
-    const reader = new FileReader()
-
-    reader.onload = () => {
-      editorRef.current?.focus()
-      document.execCommand(
-        'insertHTML',
-        false,
-        `<img src="${reader.result}" alt="${file.name}" />`,
+    const images = await Promise.all(imageFiles.map(readImage))
+    const imageHtml = images
+      .map(
+        (image) =>
+          `<figure class="editor-image-block"><img src="${image.src}" alt="${escapeAttribute(
+            image.alt,
+          )}" /></figure>`,
       )
-      emitChange()
-      event.target.value = ''
+      .join('')
+
+    editorRef.current?.focus()
+    document.execCommand('insertHTML', false, imageHtml)
+    emitChange()
+  }
+
+  function handleImageUpload(event) {
+    insertImages(event.target.files || [])
+    event.target.value = ''
+  }
+
+  function handleDragOver(event) {
+    event.preventDefault()
+    setIsDragging(true)
+  }
+
+  function handleDrop(event) {
+    event.preventDefault()
+    setIsDragging(false)
+    insertImages(event.dataTransfer.files || [])
+  }
+
+  function handlePaste(event) {
+    const imageFiles = [...event.clipboardData.files].filter((file) =>
+      file.type.startsWith('image/'),
+    )
+
+    if (imageFiles.length === 0) {
+      return
     }
 
-    reader.readAsDataURL(file)
+    event.preventDefault()
+    insertImages(imageFiles)
   }
 
   return (
-    <div className="rich-editor">
+    <div className={isDragging ? 'rich-editor is-dragging' : 'rich-editor'}>
       <div className="rich-toolbar" aria-label="본문 서식 도구">
         <button onClick={() => runCommand('bold')} type="button">
           굵게
@@ -74,11 +129,11 @@ export function RichTextEditor({ onChange, value }) {
           밑줄
         </button>
         <label>
-          크기
-          <select onChange={(event) => runCommand('fontSize', event.target.value)}>
+          폰트 크기
+          <select defaultValue="16px" onChange={(event) => applyFontSize(event.target.value)}>
             {fontSizes.map((size) => (
-              <option key={size.value} value={size.value}>
-                {size.label}
+              <option key={size} value={size}>
+                {size.replace('px', '')}
               </option>
             ))}
           </select>
@@ -98,6 +153,7 @@ export function RichTextEditor({ onChange, value }) {
         <input
           accept="image/*"
           className="visually-hidden"
+          multiple
           onChange={handleImageUpload}
           ref={fileInputRef}
           type="file"
@@ -107,7 +163,11 @@ export function RichTextEditor({ onChange, value }) {
       <div
         className="rich-editor-surface"
         contentEditable
+        onDragLeave={() => setIsDragging(false)}
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
         onInput={emitChange}
+        onPaste={handlePaste}
         ref={editorRef}
         role="textbox"
         suppressContentEditableWarning

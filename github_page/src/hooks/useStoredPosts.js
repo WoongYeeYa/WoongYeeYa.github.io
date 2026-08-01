@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { featuredPosts } from '../data/siteContent'
+import { posts as committedPosts } from '../data/posts'
 
 const STORAGE_KEY = 'woongyeeya.posts'
 
@@ -19,9 +19,9 @@ function createPostId(title) {
 function readStoredPosts() {
   try {
     const rawPosts = window.localStorage.getItem(STORAGE_KEY)
-    return rawPosts ? JSON.parse(rawPosts) : featuredPosts
+    return rawPosts ? JSON.parse(rawPosts) : committedPosts
   } catch {
-    return featuredPosts
+    return committedPosts
   }
 }
 

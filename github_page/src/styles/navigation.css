@@ -1,0 +1,76 @@
+.site-header {
+  display: grid;
+  gap: 18px;
+  padding: 10px 0 30px;
+}
+
+.brand {
+  color: var(--text-strong);
+  font-size: 18px;
+  font-weight: 800;
+  justify-self: start;
+  text-decoration: none;
+}
+
+.page-title {
+  display: grid;
+  gap: 8px;
+}
+
+.page-title h1 {
+  color: var(--text-strong);
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.08;
+  margin: 0;
+}
+
+.tab-nav {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  padding: 6px;
+  width: 100%;
+}
+
+.tab-nav button {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+  min-height: 44px;
+  padding: 0 14px;
+}
+
+.tab-nav button:hover,
+.tab-nav button.active,
+.topic-list button:hover {
+  background: var(--surface-hover);
+  color: var(--text-strong);
+}
+
+.tab-nav button.active {
+  border-color: var(--border);
+}
+
+.topic-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.topic-list button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-strong);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 9px 12px;
+}

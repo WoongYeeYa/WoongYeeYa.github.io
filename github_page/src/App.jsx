@@ -4,7 +4,7 @@ import { HeroSection } from './components/HeroSection'
 import { PageHeader } from './components/PageHeader'
 import { PostsPage } from './components/PostsPage'
 import { tabs } from './data/siteContent'
-import './App.css'
+import './styles/app.css'
 
 function App() {
   const [activeTab, setActiveTab] = useState('home')

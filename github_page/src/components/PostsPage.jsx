@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useStoredPosts } from '../hooks/useStoredPosts'
+import { downloadPostsModule } from '../utils/exportPosts'
 import { PageTabs } from './PageTabs'
 import { PostDetail } from './PostDetail'
 import { PostEditor } from './PostEditor'
@@ -79,7 +80,16 @@ export function PostsPage() {
     <section className="posts-workspace">
       <div className="posts-heading-row">
         <SectionHeading eyebrow="Latest Posts" title="작성 글" />
-        <PageTabs activeTab={activePostTab} onTabChange={handlePostTabChange} tabs={postTabs} />
+        <div className="posts-actions-row">
+          <PageTabs activeTab={activePostTab} onTabChange={handlePostTabChange} tabs={postTabs} />
+          <button
+            className="secondary-button posts-export-button"
+            onClick={() => downloadPostsModule(posts)}
+            type="button"
+          >
+            게시글 파일 내보내기
+          </button>
+        </div>
       </div>
 
       {activePostTab === 'list' && !selectedPost && (
