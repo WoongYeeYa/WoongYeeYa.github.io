@@ -6,6 +6,18 @@
   padding-top: 42px;
 }
 
+.study-notes { margin-top: 32px; }
+.workflow-figure { margin: 24px 0; }
+.workflow-figure a { display: block; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; cursor: zoom-in; }
+.workflow-figure img { display: block; width: 100%; height: auto; }
+.workflow-figure figcaption { margin-top: 10px; color: var(--text-muted); font-size: 13px; line-height: 1.7; }
+.study-note { margin-top: 18px; padding: 22px; background: var(--surface-strong); border-radius: 8px; }
+.study-note h4 { margin: 0 0 14px; font-size: 18px; line-height: 1.5; color: var(--text-strong); }
+.study-note p, .study-note li { line-height: 1.85; overflow-wrap: anywhere; }
+.study-note p { margin: 12px 0 0; }
+.study-note ul { margin: 12px 0 0; padding-left: 22px; }
+.study-note li + li { margin-top: 8px; }
+
 .posts-heading-row {
   display: grid;
   gap: 18px;

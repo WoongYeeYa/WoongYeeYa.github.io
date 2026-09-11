@@ -26,14 +26,40 @@ export function PostDetail({ onBack, post }) {
               <div><p className="eyebrow">{section.label}</p><h3 id={`${post.id}-${section.id}-title`}>{section.title}</h3></div>
             </div>
             <p className="study-section-description">{section.description}</p>
+            {section.id === 'pipeline' && post.workflowImage && (
+              <figure className="workflow-figure">
+                <a href={post.workflowImage} target="_blank" rel="noopener noreferrer" aria-label="워크플로 원본 이미지 보기 (새 탭)">
+                  <img src={post.workflowImage} alt={post.workflowImageAlt || '워크플로 구성도'} loading="lazy" />
+                </a>
+                <figcaption>{post.workflowImageCaption}</figcaption>
+              </figure>
+            )}
             {section.id === 'pipeline' && post.sections?.pipeline?.length ? (
               <ol className="pipeline-steps">{post.sections.pipeline.map((step, i) => <li key={i}><span>STEP {String(i + 1).padStart(2, '0')}</span>{step}</li>)}</ol>
             ) : (
               <div className="study-section-body">{(post.sections?.[section.id]?.length ? post.sections[section.id] : ['아직 작성된 내용이 없습니다.']).map((paragraph, i) => <p key={i}>{paragraph}</p>)}</div>
             )}
+            {section.id === 'pipeline' && post.studyNotes?.length > 0 && (
+              <div className="study-notes">
+                <p className="eyebrow">Study Notes / 공부 메모</p>
+                {post.studyNotes.map((note) => (
+                  <section className="study-note" key={note.title}>
+                    <h4>{note.title}</h4>
+                    {note.paragraphs?.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+                    {note.items?.length > 0 && <ul>{note.items.map((item) => <li key={item}>{item}</li>)}</ul>}
+                  </section>
+                ))}
+              </div>
+            )}
           </section>
         ))}
       </div>
+      {post.sources?.length > 0 && (
+        <aside className="study-note" aria-label="참고 자료">
+          <h4>참고 자료</h4>
+          <ul>{post.sources.map((source) => <li key={source.url}><a className="resume-project-link" href={source.url}>{source.title}</a></li>)}</ul>
+        </aside>
+      )}
       <button className="secondary-button" onClick={onBack} type="button">← 다른 기록 보기</button>
     </article>
   )

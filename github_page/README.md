@@ -1,5 +1,7 @@
 # React + Vite
 
+프로젝트 수정 전 [프로젝트 및 컴포넌트 가이드라인](docs/component-guidelines.md)을 확인합니다. 사용자가 정한 화면 구성, 이력서, 카테고리, N8N 글과 이미지 사용 기준을 정리한 문서입니다.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
