@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { AboutPage } from './components/AboutPage'
 import { HeroSection } from './components/HeroSection'
 import { PageHeader } from './components/PageHeader'
 import { PostsPage } from './components/PostsPage'
@@ -14,7 +13,6 @@ function App() {
       <PageHeader activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
 
       {activeTab === 'home' && <HeroSection onPostsClick={() => setActiveTab('posts')} />}
-      {activeTab === 'about' && <AboutPage onTopicClick={() => setActiveTab('posts')} />}
       {activeTab === 'posts' && <PostsPage />}
     </main>
   )
