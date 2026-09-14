@@ -1,0 +1,140 @@
+02_문서.txt
+■ 6. StringTokenizer : 문자열 파싱
+   메서드들
+   nextToken() : 파싱된 문자열을 차례로 반환한다 
+   hasMoreTokens() : nextToken()한 다음에 Token이 남아 있는지 여부를 확인
+   countTokens() : 토큰 갯수를 리턴한다 
+
+■ Test06_StringToken.java
+
+
+■ 7. Properties 클래스 사용  ( cf: 전역변수=속성=프로퍼티=property)
+
+ Properties는 말 그대로 속성(변수)를 모아서 하나의 객체로 만들기 위해 제공되는 클래스이다
+ 
+ 이 클래스가 필요한 이유는
+ 프로그램 시작하기 전에 
+ 여러개의 속성들 중 원하는 속성들을 미리 인식하게 하여
+ 전반적인 실행 환경을 좀더 신속하게 하기 위한 것이 목적이다 
+ 
+ DB연결 할 때 주로 사용한다 
+ 
+ DRIVER=com.mysql.jdbc.Driver
+ URL=jdbc:mysql://localhost:3306/mydb
+ USER=root
+ PWD=12345
+ 
+ 메서드들
+ put(key, value) : 값들 넣을 때 사용 
+ getProperty(key) : key에 해당 하는 값을 얻을때 사용  ( 이 메서드는 많이 사용)
+ 
+ Test07_Properties.java
+ Test08_Properties.java
+ 
+ ■ 8. Object
+ 
+ 자바에서는 기본 패키지 java.lang 이란 패키지를 제공해 주고 있다 
+java.lang에 있는 모든 클래스의 수퍼클래스인  Object와  기본 자료형 클래스와 
+ 표준 입력 출력을 위한 System클래스 등이 있다 
+ 
+ java.lang.Object는 모든 클래스의 최상위 클래스이다 
+ 
+ 자바의 모든 클래스들은 Object클래스로 부터 상속 받는다 
+ 
+ Object 메서드들
+ 
+ public boolean equals(Object ob):두 객체비교,  문자열 비교 
+ 
+ public boolean hashCode() : 자바 객체를 식별하는 정수 값인 해쉬코드를 반환해 준다 
+ 
+ public Class getClass() : 객체의 클래스 이름을 Class형으로 반환해 준다 
+ 
+ public String toString() : 객체를 문자열로 반환한다 (16진으로)
+ 
+ Test09_Object.java
+ 
+ ※ 스레드(채팅)할 때 사용할 것임
+ public void notify() : 현재 스레드가 일을 다했다는 것을 알려준다. 그러면 다음 대기하고 있더 스레드가 수행된다
+ public void notifyAll() :현재 스레드가 일을 다했다는 것을 모두에게 알려준다.그러면 대기중인 스레드가 수행된다 
+ public void wait() : 현재 스레드를 기다리게 한다 
+ 
+ ※ 웹 프로그램 할때는 웹서버 자체에서 스레드를 제공한다 
+ java 장점 : 보안 , network, Thread
+ 
+ www => World, wide, Web
+ 
+ 
+ ■ 9. String 클래스 
+ 
+ 메서드들
+ int length() : 문자열 길이(갯수)구하기
+ equals(Object ob) : 문자열 비교, 대소문자 구분하여 비교한다 
+ equalsIgnoreCase(Object ob): 문자열 비교, 대소문자 구분 않고 비교한다  
+ 
+ substring(int start) : start위치부터 끝까지 문자열 발췌
+ substring(int start, int end): start부터 end직전까지 문자열 발췌
+ 
+ concat(String str) : 문자열 합친다
+ 
+ replace(char old, char new):old문자를 new문자로 치환한다 
+ replace(String old, String new) : old문자열을 new문자열 치환한다 
+ 
+ 예:
+ str.replace("\n","<br>");
+ 
+ chat charAt(int idx):idx 위치 문자를 반환
+ -----------------------------------
+ String을 변수처럼 사용할때
+ -----------------------------------
+ String s1="hello";
+ String s2="hello";
+ System.out.println(s1==s2);//true
+ -------
+ 
+ String s3="Hello";
+ String s4="hello";
+ System.out.println(s3==s4);//false
+ 
+ ---------------------------------
+ String를 객체 생성하여 사용할때
+ ---------------------------------
+ String s5=new String("hello");
+ String s6=new String("hello");
+ System.out.println(s5==s6);//false
+ ----------------------------------
+ 그런데
+ System.out.println(s5.equals(s6));//true, 문자열 비교
+ System.out.println(s5.toString().equals(s6.toString()));//true, 문자열
+ -----------------------------------
+ Test10_String.java
+ 
+ toLowerCase() : 소문자로 변환하는 메서드
+ toUpperCase() : 대문자로 변환하는 메서드  // yes Yes YES
+ 
+ Test11_String.java
+ 
+ ■ Math.random() : 0.0< x <1.0  이런값을 발생한다 
+ 
+ ■ Random 클래스 : 임의의 값을 발생 시켜주는 클래스이다 
+ 
+ 메서드들 
+ nextInt() : 임의의 정수 발생(음수, 양수)
+ nextInt(int n) : 0~n 까지 임의의 정수 발생
+ nextInt(10)    : 0~10 까지 임의의 정수 발생
+ 
+ nextBoolean()
+ nextFloat()
+ nextDouble()
+ 
+ Test12_Random.java
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

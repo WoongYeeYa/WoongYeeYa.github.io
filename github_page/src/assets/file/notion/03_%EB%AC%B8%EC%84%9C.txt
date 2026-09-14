@@ -1,0 +1,31 @@
+03_문서
+
+	1. 기본 자료형 비교 연산자 
+		
+		==
+		
+		예시 : a==b
+	
+	2. 문자열 비교 연산자
+		
+		■ equals() : 대소문자 구분하여 비교한다
+		■ equalsIgnoreCase() : 대소문자 구분하지 않고 비교한다
+		
+		
+		예시	:	String str = "hello";
+				System.out.println(str.equals("hello")); //true
+				System.out.println(str.equals("hello")); //false
+				System.out.println(str.equalsIgnoreCase("hello")); //true
+			
+	2. 객채 비교 연산자
+		
+		■ 객체 instanceof 클래스
+			if(객체 instanceof 클래스) {}
+		
+		예시
+		String str2 = new String("abc"); //객체 생성
+		Object obj = new Object(); //객체 생성, Object는 자바의 최상위 클래스이다.
+		System.out.println(str2 instanceof String); //true
+		System.out.println(str2 instanceof Object); //true 클래스 Object가 String보다 상위이기 때문에 True
+		System.out.println(obj instanceof Object); //true
+		System.out.println(obj instanceof String); //false 클래스 String이 Object보다 하위이기 때문에 false

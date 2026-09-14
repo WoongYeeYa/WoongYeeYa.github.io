@@ -1,0 +1,60 @@
+01_문서.txt
+
+■ 1. 랩퍼클래스(Wrapper class) : 기본 자료형의 클래스이다
+
+기본 자료형      랩퍼클래스
+ boolean   Boolean
+ byte      Byte
+ char      Character ****
+ short     Short
+ int       Integer ******
+ long      Long
+ float     Float
+ double    Double
+ 
+ Test01_Wrapperclass.java
+ 
+ ■ 2. Date : 날짜 표시할 때 사용(영수증) 
+   3. Calendar : 다이어리(달력)만들 때 사용  
+   
+   Test02_Date.java
+   Test03_Calendar.java
+   
+ ■ 4. String : 문자열 처리
+   5. StringBuffer : 동적 문자열 처리 , String보다 속도가 빠르다
+   
+   * StringBuffer 생성자
+   
+   StringBuffer():디폴트 생성자 
+   StringBuffer(int size): size를 기본 크기로 지정
+   StringBuffer(Stirng str):str를 초기값으로 지정
+   
+   * StringBuffer 메서드 들
+StringBuffer append(boolean b) : 현재 문자열 끝에 b를 추가 
+StringBuffer append(char ch) : 현재문자열 끝에 ch를 추가 
+StringBuffer append(int i) : 현재 문자열 끝에 i 를 추가
+StringBuffer append(long l) : 현재문자열 끝에 l 를 추가 
+StringBuffer append(float f) :현재문자열 끝에 f 를 추가 
+StringBuffer append(double d) :현재문자열 끝에 d 를 추가 
+StringBuffer append(String str) :현재문자열 끝에 str문자열을 추가 
+StringBuffer append(Object obj) : 현재문자열 끝에 obj 를 추가 
+
+int capacity() : 현재 문자열의 버퍼크기(용량)를 반환(리턴)
+
+char charAt(int index) :  index 위치에 해당 문자 반환 
+                          198812-1055910 
+
+int length() 메서드 : 문자의 갯수를 반환    (참고:배열.length)
+
+StringBuffer insert(int i ,boolean b) : i번 인덱스 앞에 b를 추가
+StringBuffer insert(int i, char ch); i번 인덱스 앞에ch 를 추가
+StringBuffer insert(int i, int j) : i번 인덱스 앞에 j를 추가
+StringBuffer insert(int i, long l) :i번 인덱스 앞에 l를 추가
+StringBuffer insert(int i, String str) :i번 인덱스 앞에 str 문자열을 추가
+StringBuffer insert(int i,Object obj) : i번 인덱스 앞에 obj를 추가
+
+Test04_StringBuffer.java
+Test05_String_SB.java  String과 StringBuffer 실행속도 비교하는 예제
+
+
+   

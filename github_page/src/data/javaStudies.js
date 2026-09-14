@@ -4,7 +4,21 @@ import guiThumbnail from '../assets/post-java-3.svg'
 import dataThumbnail from '../assets/post-java-4.svg'
 import networkThumbnail from '../assets/post-java-5.svg'
 
-function createStudy(number, title, thumbnail, excerpt, pipeline, studyNotes, sources) {
+const sourceArchives = import.meta.glob('../assets/file/notion/*.zip', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})
+
+const studyArchives = {
+  1: ['ch01.zip', 'ch02_dataType.zip', 'ch03_operation.zip', 'ch04_Control.zip', 'ch05_Array.zip'],
+  2: ['ch06_oop.zip', 'ch07_cons.zip', 'ch08.zip', 'src.zip'],
+  3: ['ch10_awt.zip', 'ch11_layout.zip', 'ch12_event.zip', 'ch18_swing.zip'],
+  4: ['ch13_exception.zip', 'ch14_io.zip', 'ch15_util.zip', 'ch16_util.zip'],
+  5: ['ch17_thread.zip', 'Thread.zip', 'ch19_network.zip', 'ch20_network.zip'],
+}
+
+function createStudy(number, title, thumbnail, excerpt, pipeline, studyNotes) {
   return {
     id: `java-study-${number}`,
     title: `Java 공부 ${number} · ${title}`,
@@ -20,7 +34,11 @@ function createStudy(number, title, thumbnail, excerpt, pipeline, studyNotes, so
     explanationDescription: '강의 노트에서 연결되는 개념과 예제를 함께 정리한 내용',
     sections: { pipeline },
     studyNotes,
-    sources,
+    downloads: studyArchives[number].map((filename) => ({
+      title: filename === 'src.zip' ? '전체 소스 · src.zip' : filename,
+      filename,
+      url: sourceArchives[`../assets/file/notion/${filename}`],
+    })),
   }
 }
 
@@ -62,7 +80,6 @@ const javaStudy1 = createStudy(
       paragraphs: ['배열은 같은 요소 자료형의 여러 값을 인덱스로 다루는 객체입니다. int[] values = {10, 20, 30}으로 초기화하거나 new int[3]으로 크기를 정해 만들고, values[0]처럼 0부터 시작하는 인덱스로 접근합니다.', '배열 길이는 values.length로 확인합니다. 구구단 예제에서는 바깥 반복으로 2단부터 9단까지, 안쪽 반복으로 1부터 9까지 곱하는 중첩 반복을 사용했습니다. 배열의 각 요소를 처리하는 반복과 같은 흐름으로 묶어 공부했습니다.'],
     },
   ],
-  [{ title: 'Oracle · Java 변수·자료형·연산자·제어문', url: 'https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html' }],
 )
 
 const javaStudy2 = createStudy(
@@ -101,7 +118,6 @@ const javaStudy2 = createStudy(
       paragraphs: ['추가 메모에서는 JDK·Eclipse, Tomcat과 DB를 준비하는 웹 개발 환경을 정리했습니다. Servlet 예제는 HttpServlet을 상속하고 doGet에서 요청·응답 객체를 받아 응답 내용을 작성하는 구조입니다.', 'web.xml의 servlet과 servlet-mapping으로 요청 URL과 클래스를 연결하고, 응답의 Content-Type과 문자 인코딩을 지정하는 흐름도 함께 공부했습니다. 객체의 역할을 나누는 구조가 웹 요청 처리로 이어지는 내용입니다.'],
     },
   ],
-  [{ title: 'Oracle · 인터페이스·상속·다형성과 추상 클래스', url: 'https://docs.oracle.com/javase/tutorial/java/IandI/index.html' }],
 )
 
 const javaStudy3 = createStudy(
@@ -141,7 +157,6 @@ const javaStudy3 = createStudy(
       items: ['model.setRowCount(0): 표 데이터를 비웁니다.', 'model.addRow(rowData): 행을 추가합니다.', 'model.removeRow(row): 행을 삭제합니다.', 'table.getSelectedRow(): 선택된 행의 인덱스를 얻습니다.', 'table.getValueAt(row, column): 셀 값을 읽습니다.', 'table.setValueAt(value, row, column): 셀 값을 바꿉니다.'],
     },
   ],
-  [{ title: 'Oracle · Swing 컴포넌트·레이아웃과 이벤트', url: 'https://docs.oracle.com/javase/tutorial/uiswing/index.html' }],
 )
 
 const javaStudy4 = createStudy(
@@ -185,7 +200,6 @@ const javaStudy4 = createStudy(
       paragraphs: ['Vector<String>이나 List<BoardDTO>처럼 요소 자료형을 선언하는 제너릭을 공부했습니다. 잘못된 자료형을 넣는 일을 컴파일 단계에서 찾고, 꺼낸 값을 불필요하게 캐스팅하는 작업을 줄입니다.', '컬렉션과 배열을 순회하는 for (String item : items) 형태의 향상된 for문을 함께 묶어 정리했습니다.'],
     },
   ],
-  [{ title: 'Oracle · 예외와 입출력', url: 'https://docs.oracle.com/javase/tutorial/essential/index.html' }, { title: 'Oracle · 컬렉션과 제너릭', url: 'https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html' }],
 )
 
 const javaStudy5 = createStudy(
@@ -227,7 +241,6 @@ const javaStudy5 = createStudy(
       paragraphs: ['SimpleServer·SimpleClient와 MiddleServer·MiddleClient 자료를 소켓 연결과 입출력 예제로 묶었습니다. 서버가 연결을 받고 클라이언트가 요청하는 구조에서, 앞서 공부한 스트림과 예외 처리가 함께 사용됩니다.', '생산자·소비자 스레드와 소켓 통신은 모두 작업 사이에서 데이터를 전달하는 흐름이라는 점으로 연결해 정리했습니다.'],
     },
   ],
-  [{ title: 'Oracle · 스레드와 동기화', url: 'https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html' }, { title: 'Oracle · 소켓 네트워크', url: 'https://docs.oracle.com/javase/tutorial/networking/index.html' }],
 )
 
 // 시리즈 카드는 최근 회차부터 표시하고, 각 글 안에서는 기초부터 순서대로 설명합니다.

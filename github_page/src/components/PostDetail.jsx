@@ -67,6 +67,12 @@ export function PostDetail({ onBack, post }) {
           </section>
         ))}
       </div>
+      {post.downloads?.length > 0 && (
+        <aside className="study-note" aria-label="실습 소스 다운로드">
+          <h4>실습 소스</h4>
+          <ul>{post.downloads.map((file) => <li key={file.filename}><a className="resume-project-link" href={file.url} download={file.filename}>{file.title} 다운로드</a></li>)}</ul>
+        </aside>
+      )}
       {post.sources?.length > 0 && (
         <aside className="study-note" aria-label="참고 자료">
           <h4>참고 자료</h4>

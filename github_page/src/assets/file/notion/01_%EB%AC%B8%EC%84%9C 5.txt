@@ -1,0 +1,11 @@
+01_문서
+
+Layout : 컴포넌트 배치
+
+종류
+1. FlowLayout : panel 계열의 디폴트이다
+2. BorderLayout : Window 계열의 디폴트이다
+3. GridLayout : 컴포넌트를 격자 모양으로 표시 (엑셀)
+4. null : 프로그래머가 직접 배치
+5. GridBagLayout : 컴포넌트를 다양한 크기로 배치 (잘 사용하지 않음)
+6. CardLayout : 컴포넌트를 카드식으로 배치(잘 사용하지 않음)

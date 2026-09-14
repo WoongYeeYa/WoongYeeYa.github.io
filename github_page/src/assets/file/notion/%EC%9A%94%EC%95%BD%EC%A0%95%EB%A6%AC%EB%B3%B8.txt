@@ -1,0 +1,41 @@
+1. JDK
+2. Eclipse
+
+■웹 프로그램  할려면 
+1. JDK 설치
+   MySQL 설치 / Oracle 설치
+
+2. WAS 설치(Tomcat 설치)
+3. Eclipse 실행
+
+ Servlet/JSP   font-end<==>back-end
+   웹                클라이언트    서버
+
+4. sts3/ sts4  다운 , Eclipse포함되었음
+   Spring, SpringBoot
+===================
+1. JDK 설치
+   DB(MySQL, Oracle) 설치
+   MySQL ==> MariaDB
+   java   ===> OpenJDK
+
+ JDK1.4+EJB , JDK1.5, JDK1.6 , JDK1.7,  JDK1.8 ........   JDK11  JDK17  JDK19
+
+2. Tomcat 서버 설치
+   WAS(Web Applicatiom Server) 종류
+
+   1) BEA사의 Web Logic/// JDK1.4 + EJB
+   2) IBM사의 Web Spere
+   3) TMAX사의 Jeus : 우리나라 에서 만든것
+   6) Apache project의 Tomcat *********
+
+   4) JBOSS (RedHat으로 인수되었음)
+  5) Sun microsystems사의 Sun Application Server
+
+
+3. Eclipse 실행
+   Servlet/JSP   font-end<==>back-end
+   웹                클라이언트    서버
+
+4. sts3/ sts4  다운 , Eclipse포함되었음
+   Spring, SpringBoot

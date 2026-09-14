@@ -1,0 +1,35 @@
+03_문서
+
+String 클래스 메서드
+
+1. indexOf(int ch): ch문제 위치(index)를 반환(리턴)한다.
+	즉, 현재 문자열 객체에서 ch문자가 첫번째로 발견된 위치를 반환한다.
+======================================================
+	예:
+	String str="banana";
+			  //012345
+	int idx=str.indexOf('a'); //'a'가 첫번째로 발견된 위치를 얻는다
+	Sytem.out.println(idx);
+======================================================
+
+2. indexOf(String str): 현재 문자열 객체에서 str문자열이 첫번째로 발견된 위치를 반환한다.
+						문자열이 없으면 -1을 반환한다.
+						
+======================================================
+예:
+	String str5="총 비용은 $45.67";
+	//           012345678901
+	int idx2=str5.indexOf("$45.67");
+	System.out.println("idx2:"+idx2);;//6
+	
+
+	
+오늘의 숙제 Test02_homework.java
+주민번호를 args[0] 입력 받아서 남자인지 여자인지 판정하여 출력하시오
+1,3:남자			2,4:여자
+	public static void main(String args[]){
+		String jumin = args[0]
+		System.out.println("인수 갯수:"+args.length);
+		System.out.println("args[0]:"+args[0]);
+		System.out.println("args[1]:"+args[1]);
+		System.out.println("args[2]:"+args[2]);

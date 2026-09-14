@@ -1,0 +1,142 @@
+1.MySQL 설치 후 cmd창에서 MySQL 실행하는 법
+
+root에서 
+
+cd C:\MySQL55\bin>
+
+C:\MySQL55\bin> mysql -u root -p
+C:\MySQL55\bin> mysql user root 암호
+
+Enter password:12345
+
+ctrl+c : exit
+
+2. DataBase 만들기
+
+mysql> create DataBase mydb;
+mysql> create DataBase DB이름;
+
+3. DataBase 사용하기
+
+use mydb;
+
+4. table 만들기  (varchar() = 문자열 (자바에서 String))
+
+create table (테이블 이름)(
+id varchar(20) not null,
+pw varchar(20) not null,
+name varchar(30) not null);
+
+create table test(
+id varchar(20) not null,
+pw varchar(20) not null,
+name varchar(30) not null);
+
+5. table 삭제
+
+drop table (테이블 이름);
+
+6. table이 만들어 졌는지 확인
+
+show tables;
+
+7. table 구조 확인 
+desc test;
+=========================
+■ 데이터 입력 : insert
+■ 데이터 검색 : select
+■ 데이터 수정 : update
+■ 데이터 삭제 : delete
+
+
+■ 데이터 입력 : insert
+insert into test values('kim','k123','김정은');
+insert into test values('lee','l123','이효리');
+insert into test values('park','p123','박문수');
+
+■ 데이터 검색 : select
+
+select id, name from test;
+select name from test;
+select * from test;(모두 본다)
+
+-order by 키필드 asc(오름차순,순서대로) 또는 desc(내림차순, 역순으로)
+select * from test order by id asc; ##asc는 생략 가능
+select * from test order by id desc;
+-'박문수' 검색하시오-
+select * from test where name='박문수'
+
+-'이'가 포함된 자료를 검색하세요
+
+select * from test where name like '%이%';
+
+■ 데이터 수정 : update
+
+update test set name = '이순신' where name = '이상순';
+
+■ 데이터 삭제 : delete
+'이순신'을 삭제하시오
+
+delete from test where name = '이순신'
+
+■ DataBase 삭제
+drop database mydb;
+
+
+==========================================
+문제 1
+table 이름 =  test2
+
+필드명(칼럼명) id(20), name(30), tel(14)
+==========================================
+문제 2
+
+'h123','홍길동','010-2323-565'
+'h124','이순신','010-5555-666'
+'h125','허수경','010-4545-7878'
+------------------------------------------------------------------
+문제 3
+'허수경'을 '허경영'으로 수정하세요
+
+update
+
+==========================================
+문제 4 'h123' 자료를 삭제하세요
+delete
+
+==========================================
+문제 5 : 아래 자료를 insert 하세요
+
+'lee1','이효리','010-898-6565'
+'lee2','이상순','010-2323-5656'
+==========================================
+문제 6 : 이름을 오름차순으로 출력하세요.
+
+문제 7 : 이름에 '이'가 포함된 자료만 검색하세요.
+
+문제 8 : '이순신' 자료를 검색하세요.
+
+==========================================
+
+primary key : 유일한 값(주민번호 ,id , 학번, 사원번호)
+auto_increment : 일련번호를 자동증가하여 입력되게 한다.
+
+==========================================
+
+create table board(
+ num int not null auto_increment primary key,
+ writer varchar(30) not null,
+ subject varchar(50) not null
+ wdate date
+);
+
+------------------------------------------------------------------
+show tables;
+desc board;
+
+------------------------------------------------------------------
+insert into board (writer, subject, wdate)
+values('이순신','이순신글',NOW());
+
+insert into board (writer, subject, wdate)
+values('아이유','아이유글',NOW());

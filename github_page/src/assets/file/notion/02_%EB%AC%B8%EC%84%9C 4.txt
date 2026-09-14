@@ -1,0 +1,22 @@
+문서02
+
+throw new 예외클래스(); // 예쇠생성
+
+new Test01();
+throw new MyException();
+
+==============================
+
+class ExceptionTest{
+	if(MyException발생 조건){
+	throw new MyException("메시지");//예외생성
+	}
+}
+	
+===================================
+class MyException extends Exception {
+	//생성자
+	public MyException(String msg){
+	super(msg);//상위 클래스 생성자 호출
+	}
+}
