@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#324842"/>
+  <g font-family="Arial, sans-serif" fill="#edf1f8">
+    <text x="48" y="75" font-size="18" letter-spacing="4">CODING / LECTURE NOTES</text>
+    <text x="48" y="180" font-size="68" font-weight="700">Java 3</text>
+    <text x="48" y="255" font-size="40" font-weight="700">GUI &amp; Events</text>
+    <text x="48" y="310" font-size="18" letter-spacing="2">AWT / LAYOUT / SWING</text>
+    <text x="48" y="401" font-size="14" letter-spacing="3">JAVA STUDY / WOONGYEEYA</text>
+  </g>
+  <g fill="none" stroke="#acbdde" stroke-width="4"><path d="m642 121-25 25 25 25m65-50 25 25-25 25m-32-64-14 74"/></g>
+  <path d="M48 350h704" stroke="#acbdde" opacity=".3"/>
+</svg>

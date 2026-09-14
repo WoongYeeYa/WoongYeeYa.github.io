@@ -9,11 +9,13 @@ import { n8nStudy5 } from './n8nStudy5'
 import { discordGeminiBot } from './discordGeminiBot'
 import { templateTransferTool } from './templateTransferTool'
 import { openWebuiStudy } from './openWebuiStudy'
+import { javaStudies } from './javaStudies'
 
 // 정적 게시글: thumbnail과 sections의 여섯 항목을 수정해 글을 관리합니다.
 export const postCategories = ['AI', '코딩', '일상·기록']
 
 export const posts = [
+  ...javaStudies,
   openWebuiStudy,
   templateTransferTool,
   discordGeminiBot,
