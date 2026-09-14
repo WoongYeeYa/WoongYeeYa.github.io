@@ -89,6 +89,8 @@
 .post-card h3 { line-height: 1.45; overflow-wrap: anywhere; }
 .post-card-content > p { flex: 1; }
 .post-detail-cover { display: block; width: 100%; height: auto; max-height: 400px; object-fit: cover; border-radius: 8px; margin-top: 28px; }
+.post-detail-cover.workflow-cover { width: auto; max-width: 100%; max-height: none; object-fit: contain; margin-inline: auto; }
+.post-thumbnail.workflow-thumbnail { object-fit: contain; background: #282a2b; }
 .post-detail-title { scroll-margin-top: 24px; overflow-wrap: anywhere; }
 .post-toc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 22px; background: var(--surface-strong); border-radius: 8px; margin-top: 28px; }
 .post-toc a { display: flex; gap: 10px; color: var(--text-strong); text-decoration: none; font-size: 14px; line-height: 1.6; }

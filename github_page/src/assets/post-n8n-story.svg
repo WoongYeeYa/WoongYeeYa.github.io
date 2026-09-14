@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#352a40"/>
+  <g font-family="Arial, sans-serif" fill="#dbb1ed">
+    <text x="48" y="72" font-size="18" letter-spacing="3">AI / STORY MAKER</text>
+    <text x="48" y="184" font-size="64" font-weight="700">N8N</text>
+    <text x="48" y="236" font-size="26">STUDY 05</text>
+    <text x="48" y="402" font-size="14" letter-spacing="2">PARENT / CHILD / WORKFLOW</text>
+  </g>
+  <g fill="none" stroke="#dbb1ed" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M360 200h105" stroke-dasharray="8 8"/>
+    <rect x="567" y="111" width="68" height="60" rx="14"/>
+    <path d="M601 171v34m-67 32v-32h134v32"/>
+    <rect x="500" y="237" width="68" height="60" rx="14"/>
+    <rect x="634" y="237" width="68" height="60" rx="14"/>
+    <path d="M586 132h30m-30 18h20m-101 104h26m108 0h26"/>
+  </g>
+  <path d="M48 349h704" stroke="#dbb1ed" opacity=".3"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#3e3228"/>
+  <g font-family="Arial, sans-serif" fill="#f1c18d">
+    <text x="48" y="72" font-size="18" letter-spacing="3">AI / TRANSCRIPT PIPELINE</text>
+    <text x="48" y="184" font-size="64" font-weight="700">N8N</text>
+    <text x="48" y="236" font-size="26">STUDY 04</text>
+    <text x="48" y="402" font-size="14" letter-spacing="2">TRANSCRIPT / MERGE / STORAGE</text>
+  </g>
+  <g fill="none" stroke="#f1c18d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M360 200h105" stroke-dasharray="8 8"/>
+    <rect x="494" y="111" width="214" height="186" rx="18"/>
+    <path d="M494 163h214M524 138h24m14 0h14m-52 59h112m-112 25h76"/>
+    <circle cx="555" cy="262" r="13"/>
+    <path d="M555 254v8l6 5m20-5h81"/>
+  </g>
+  <path d="M48 349h704" stroke="#f1c18d" opacity=".3"/>
+</svg>

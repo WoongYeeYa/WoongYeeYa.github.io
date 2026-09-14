@@ -1,26 +1,46 @@
-// 실제 경력, 학력, 연락처를 이 파일에서 채워 주세요. 빈 배열은 '작성 예정'으로 표시합니다.
+// 제공된 이력서를 바탕으로 정리한 공개 프로필입니다.
 export const resume = {
   name: '조영웅',
   handle: 'WoongYeeYa',
-  headline: '끊임없이 성장하는 개발자',
-  summary: '프로젝트를 만들며 배운 점과 시행착오를 남깁니다. 작은 개선도 꾸준히 기록하고, 나중에 다시 꺼내 볼 수 있는 형태로 정리해 갑니다.',
+  headline: '기획을 이해하고, 화면 개발부터 테스트까지 함께하는 개발자',
+  summary: 'Java·Spring 기반 교육자료 기술 심사 시스템에서 화면 개발, 소스 배포, 테스트와 오류 수정을 담당했습니다. 게임 기획에서 쌓은 문서 작성과 소통 경험을 바탕으로 프로젝트의 전체 흐름을 이해하고, 팀이 필요한 정보를 정리하며 문제를 해결합니다.',
   github: 'https://github.com/WoongYeeYa',
   email: 'arhyun08311101@gmail.com',
-  // 숙련도 대신 현재 프로젝트에서 사용한 기술을 표시합니다.
   skills: [
-    { name: 'Frontend', items: ['React', 'JavaScript', 'HTML', 'CSS'] },
-    { name: 'Tools & Platform', items: ['Vite', 'GitHub Pages', 'ESLint'] },
+    { name: '웹 개발 · 실무 및 프로젝트', items: ['Java', 'Spring', 'JavaScript', 'HTML5', 'CSS3', 'JSP', 'MySQL', 'React', 'Bootstrap'] },
+    { name: '개발 도구 및 협업', items: ['Eclipse', 'Visual Studio Code', 'IntelliJ IDEA', 'Excel', 'Google Sheets', 'Notion', 'Jira'] },
+    { name: '개인 사이트', items: ['Vite', 'GitHub Pages', 'ESLint'] },
   ],
-  // 예: { period: '2024.03 – 2026.02', title: '회사명 · 역할', description: '담당 업무와 성과' }
-  experience: [],
-  // 예: { period: '2020.03 – 2024.02', title: '학교명 · 전공', description: '학위 또는 교육 내용' }
-  education: [],
+  experience: [
+    { period: '2022.09 – 2023.03', title: '프리플로우 · 게임 기획', description: '방치형 모바일 게임 제작 프로젝트에서 데이터베이스 제작·관리와 UI 기획서 10개 작성을 담당했습니다. 일부 시스템 기획을 수행하고, 기획·개발·그래픽 담당자 사이에서 구현 방향과 진행 상황을 공유했습니다.' },
+    { period: '2024.06 – 2024.12', title: '(주)앳시스 · 사원', description: 'LG CNS AI 전자 교육 자료 기술 심사 시스템 개발에 참여하며 Java·Spring 기반 웹 화면 개발 업무를 수행했습니다.' },
+    { period: '2024.12 – 2026.03', title: '(주)퓨전소프트 · 주임', description: 'LG CNS AI 전자 교육 자료 기술 심사 시스템 개발에 참여했습니다. 기술 심사, 결과 확인, 환경 설정, 심사 항목 관리 화면 개발과 소스 배포·테스트·오류 수정을 담당하고, 개발사 관통 테스트를 관리했습니다.' },
+  ],
+  strengths: [
+    { title: '화면 개발부터 테스트까지', description: '기술 심사 시스템의 화면 구현뿐 아니라 배포, 오류 수정과 개발사 관통 테스트까지 참여해 실제 사용 환경의 문제를 확인했습니다.' },
+    { title: '정보를 정리해 업무 병목 해결', description: '관통 테스트 준비 중 데이터 전달 지연이 예상되자 개발사별 자료를 직접 확인하고 Excel로 정리해 데이터 팀에 전달했습니다. 정해진 테스트 일정에 맞춰 준비할 수 있도록 지원했습니다.' },
+    { title: '기획 의도를 공유하는 협업', description: '기획 문서와 구현 상황을 함께 파악하고 여러 직군의 의사소통을 지원했습니다. 교육 프로젝트에서도 요구사항 정의서와 테이블 설명을 정리해 팀원들과 공유했습니다.' },
+  ],
   projects: [
     {
+      title: '방치형 모바일 게임 · 기획 및 데이터 관리',
+      period: '2022.09 – 2023.03 · 프리플로우',
+      description: '게임 기획자로 참여해 데이터베이스 제작·관리와 UI 기획서 10개 작성을 담당하고, 일부 시스템 기획을 수행했습니다. 기존 시스템·콘텐츠 기획서를 검토해 기획 의도를 파악하고, 개발·그래픽 담당자에게 구현 방향을 설명했습니다. 개발 진척과 이슈를 메인 기획자에게 공유하며 직군 간 협업을 지원했습니다.',
+      tags: ['게임 기획', 'UI 기획', '시스템 기획', '데이터 관리', 'Excel'],
+    },
+    {
+      title: 'LG CNS AI 전자 교육 자료 기술 심사 시스템',
+      period: '2024.06 – 2026.03 · 실무 프로젝트',
+      description: 'AI 전자 교육 자료를 검증하는 기술 심사 시스템입니다. 기술 심사·결과 확인·환경 설정·심사 항목 관리 화면을 개발하고, 웹 소스 배포와 테스트, 오류 수정 및 개발사 관통 테스트 관리를 담당했습니다.',
+      tags: ['Java', 'Spring', 'Eclipse', '화면 개발', '테스트'],
+    },
+    {
       title: '개인 블로그 · 공부 기록',
+      period: '현재 운영 중 · 개인 프로젝트',
       description: '배움과 문제 해결 과정을 정리하는 개인 사이트입니다. 카테고리별 글 탐색과 여섯 항목으로 구성한 공부 기록 상세 화면을 제공합니다.',
       tags: ['React', 'Vite', 'CSS'],
       url: 'https://github.com/WoongYeeYa/WoongYeeYa.github.io',
+      linkLabel: '소스 코드 보기',
     },
   ],
 }

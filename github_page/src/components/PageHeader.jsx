@@ -8,7 +8,6 @@ export function PageHeader({ activeTab, onTabChange, tabs }) {
       </a>
       <div className="page-title">
         <p className="eyebrow">Personal Blog</p>
-        <h1>기록하는 개발 공간</h1>
       </div>
       <PageTabs activeTab={activeTab} onTabChange={onTabChange} tabs={tabs} />
     </header>

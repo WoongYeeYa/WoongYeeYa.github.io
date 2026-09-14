@@ -7,8 +7,10 @@ function Timeline({ entries, emptyText }) {
       {entries.map((entry, index) => (
         <li key={index}>
           <p className="resume-period">{entry.period}</p>
-          <h4>{entry.title}</h4>
-          <p>{entry.description}</p>
+          <div className="resume-timeline-content">
+            <h4>{entry.title}</h4>
+            <p>{entry.description}</p>
+          </div>
         </li>
       ))}
     </ol>
@@ -39,34 +41,43 @@ export function HeroSection({ onPostsClick }) {
       </header>
 
       <div className="resume-section">
-        <div className="resume-section-label"><p className="eyebrow">01 / Skills</p><h3>기술 스택</h3><p>현재 프로젝트에서 사용한 기술</p></div>
+        <div className="resume-section-label"><p className="eyebrow">01 / Skills</p><h3>기술 스택</h3><p>실무·프로젝트 경험과 교육 과정에서 학습한 기술</p></div>
         <div className="resume-skills">
           {resume.skills.map((group) => <div key={group.name}><h4>{group.name}</h4><ul className="resume-tags">{group.items.map((item) => <li key={item}>{item}</li>)}</ul></div>)}
         </div>
       </div>
 
       <div className="resume-section">
-        <div className="resume-section-label"><p className="eyebrow">02 / Experience</p><h3>경력 및 활동</h3></div>
+        <div className="resume-section-label"><p className="eyebrow">02 / Experience</p><h3>경력 및 활동</h3><p>첫 경력부터 현재까지</p></div>
         <Timeline entries={resume.experience} emptyText="경력 및 활동 이력 작성 예정" />
       </div>
 
       <div className="resume-section">
-        <div className="resume-section-label"><p className="eyebrow">03 / Projects</p><h3>프로젝트</h3></div>
+        <div className="resume-section-label"><p className="eyebrow">03 / Projects</p><h3>프로젝트</h3><p>게임 기획부터 웹 개발, 개인 프로젝트까지</p></div>
         <div className="resume-projects">
           {resume.projects.map((project) => (
             <article className="resume-project" key={project.title}>
-              <p className="eyebrow">Selected Project</p><h4>{project.title}</h4>
+              <p className="eyebrow">Selected Project</p>
+              {project.period && <p className="resume-project-period">{project.period}</p>}
+              <h4>{project.title}</h4>
               <p>{project.description}</p>
               <ul className="resume-tags">{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
-              {project.url && <a className="resume-project-link" href={project.url}>소스 코드 보기 ↗</a>}
+              {project.url && <a className="resume-project-link" href={project.url}>{project.linkLabel || '프로젝트 보기'} ↗</a>}
             </article>
           ))}
         </div>
       </div>
 
       <div className="resume-section">
-        <div className="resume-section-label"><p className="eyebrow">04 / Education</p><h3>학력 및 교육</h3></div>
-        <Timeline entries={resume.education} emptyText="학력 및 교육 이력 작성 예정" />
+        <div className="resume-section-label"><p className="eyebrow">04 / Strengths</p><h3>업무 강점</h3><p>프로젝트에서 쌓은 문제 해결과 협업 경험</p></div>
+        <div className="resume-strengths">
+          {resume.strengths.map((strength) => (
+            <article key={strength.title}>
+              <h4>{strength.title}</h4>
+              <p>{strength.description}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -7,19 +7,33 @@
   { id: 'reflection', title: '리플렉션', label: 'Reflection', description: '배운 점과 다음에 시도할 것' },
 ]
 
+function WorkflowFigure({ src, alt, caption }) {
+  return (
+    <figure className="workflow-figure">
+      <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`${alt} 원본 보기 (새 탭)`}>
+        <img src={src} alt={alt} loading="lazy" />
+      </a>
+      <figcaption>{caption}</figcaption>
+    </figure>
+  )
+}
+
 export function PostDetail({ onBack, post }) {
+  const visibleSections = post.explanationOnly
+    ? [{ id: 'pipeline', title: post.explanationTitle || '워크플로 설명', label: post.explanationLabel || 'Workflow', description: post.explanationDescription || '각 구성의 목적과 노드 역할' }]
+    : sections
   return (
     <article className="post-detail">
       <div className="post-detail-toolbar"><button className="secondary-button" onClick={onBack} type="button">← 목록으로</button></div>
       <div className="post-meta"><span>{post.category}</span><span>{post.date}</span><span>{post.readTime}</span></div>
       <h2 className="post-detail-title" tabIndex={-1}>{post.title}</h2>
       <p className="post-detail-excerpt">{post.excerpt}</p>
-      <img className="post-detail-cover" src={post.thumbnail} alt="" width="800" height="450" />
+      <img className={`post-detail-cover${post.thumbnailIsWorkflow ? ' workflow-cover' : ''}`} src={post.thumbnail} alt="" width="800" height="450" />
       <nav className="post-toc" aria-label="글 목차">
-        {sections.map((section, index) => <a key={section.id} href={`#${post.id}-${section.id}`}><span>0{index + 1}</span>{section.title}</a>)}
+        {visibleSections.map((section, index) => <a key={section.id} href={`#${post.id}-${section.id}`}><span>0{index + 1}</span>{section.title}</a>)}
       </nav>
       <div className="study-sections">
-        {sections.map((section, index) => (
+        {visibleSections.map((section, index) => (
           <section className="study-section" id={`${post.id}-${section.id}`} key={section.id} aria-labelledby={`${post.id}-${section.id}-title`}>
             <div className="study-section-heading">
               <span className="study-section-number">0{index + 1}</span>
@@ -27,12 +41,7 @@ export function PostDetail({ onBack, post }) {
             </div>
             <p className="study-section-description">{section.description}</p>
             {section.id === 'pipeline' && post.workflowImage && (
-              <figure className="workflow-figure">
-                <a href={post.workflowImage} target="_blank" rel="noopener noreferrer" aria-label="워크플로 원본 이미지 보기 (새 탭)">
-                  <img src={post.workflowImage} alt={post.workflowImageAlt || '워크플로 구성도'} loading="lazy" />
-                </a>
-                <figcaption>{post.workflowImageCaption}</figcaption>
-              </figure>
+              <WorkflowFigure src={post.workflowImage} alt={post.workflowImageAlt || '워크플로 구성도'} caption={post.workflowImageCaption} />
             )}
             {section.id === 'pipeline' && post.sections?.pipeline?.length ? (
               <ol className="pipeline-steps">{post.sections.pipeline.map((step, i) => <li key={i}><span>STEP {String(i + 1).padStart(2, '0')}</span>{step}</li>)}</ol>
@@ -41,12 +50,16 @@ export function PostDetail({ onBack, post }) {
             )}
             {section.id === 'pipeline' && post.studyNotes?.length > 0 && (
               <div className="study-notes">
-                <p className="eyebrow">Study Notes / 공부 메모</p>
+                <p className="eyebrow">{post.explanationOnly ? '목적과 구성' : 'Study Notes / 공부 메모'}</p>
                 {post.studyNotes.map((note) => (
                   <section className="study-note" key={note.title}>
                     <h4>{note.title}</h4>
+                    {note.image && <WorkflowFigure src={note.image} alt={note.imageAlt || note.title} caption={note.imageCaption || '이미지를 클릭하면 원본을 크게 볼 수 있습니다.'} />}
                     {note.paragraphs?.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
                     {note.items?.length > 0 && <ul>{note.items.map((item) => <li key={item}>{item}</li>)}</ul>}
+                    {note.steps?.length > 0 && <ol>{note.steps.map((step) => <li key={step}>{step}</li>)}</ol>}
+                    {note.command && <p className="study-command"><strong><code>{note.command}</code></strong></p>}
+                    {note.afterParagraphs?.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
                   </section>
                 ))}
               </div>
