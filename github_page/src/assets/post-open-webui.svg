@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#223344"/>
+  <g font-family="Arial, sans-serif" fill="#dcecff">
+    <text x="48" y="75" font-size="18" letter-spacing="4">AI / LOCAL DEVELOPMENT</text>
+    <text x="48" y="180" font-size="56" font-weight="700">Open WebUI</text>
+    <text x="48" y="244" font-size="40" font-weight="700">My AI Workspace</text>
+    <text x="48" y="300" font-size="19" letter-spacing="2">SETUP / LOCAL SERVER / CUSTOMIZATION</text>
+    <text x="48" y="401" font-size="14" letter-spacing="3">CONDA / PYTHON / SVELTEKIT / FASTAPI</text>
+  </g>
+  <g fill="none" stroke="#91bee8" stroke-width="4">
+    <rect x="598" y="139" width="140" height="140" rx="12"/>
+    <path d="M598 166h140m-106 22h80m-80 22h58m-58 22h80m-40 47v30m-30 0h60"/>
+  </g>
+  <path d="M48 350h704" stroke="#91bee8" opacity=".3"/>
+</svg>
