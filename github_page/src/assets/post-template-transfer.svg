@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#203738"/>
+  <g font-family="Arial, sans-serif" fill="#d7f1e9">
+    <text x="48" y="75" font-size="18" letter-spacing="4">DOCUMENT / PERSONAL PROJECT</text>
+    <text x="48" y="180" font-size="48" font-weight="700">Template</text>
+    <text x="48" y="244" font-size="48" font-weight="700">Transfer Tool</text>
+    <text x="48" y="300" font-size="19" letter-spacing="2">WORD TO HWP / FORMAT COMPATIBILITY</text>
+    <text x="48" y="401" font-size="14" letter-spacing="3">PYTHON / MCP / HANCOM AUTOMATION</text>
+  </g>
+  <g fill="none" stroke="#8cd1bc" stroke-width="4">
+    <rect x="575" y="143" width="75" height="110" rx="8"/>
+    <rect x="687" y="187" width="75" height="110" rx="8"/>
+    <path d="M590 166h44m-44 20h44m-44 20h44m22 56h31m-12-12 12 12-12 12"/>
+    <path d="M700 209h49v63h-49zm0 21h49m-25-21v63"/>
+  </g>
+  <path d="M48 350h704" stroke="#8cd1bc" opacity=".3"/>
+</svg>
