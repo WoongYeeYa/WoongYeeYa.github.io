@@ -2,19 +2,17 @@ import addedImage5_1_0 from '../assets/screenshot/n8n-study-5/스토리 메이�
 import addedImage5_1_1 from '../assets/screenshot/n8n-study-5/이야기를 작성한 모습.png'
 import addedImage5_0_0 from '../assets/screenshot/n8n-study-5/스토리메이커 자식에서 설정해줘야될 설정 지정.png'
 import addedImage5_0_1 from '../assets/screenshot/n8n-study-5/자식 노드 if.png'
-﻿import childImage from '../assets/screenshot/n8n-study-5/스토리 메이커 자식 에이전트.png'
+import childImage from '../assets/screenshot/n8n-study-5/스토리 메이커 자식 에이전트.png'
 import parentImage from '../assets/screenshot/n8n-study-5/스토리 메이커 부모 에이전트.png'
 import thumbnail from '../assets/thumbnail/post-n8n-story.svg'
 
 export const n8nStudy5 = {
   id: 'n8n-study-5',
   title: 'N8N 공부 5 · 부모·자식 스토리메이커',
-  date: '2026.09.11',
   topic: 'AI',
   category: 'N8N · Sub-workflow',
   thumbnail,
   excerpt: "채팅 요청을 받는 부모 Agent와 스토리 생성 작업을 맡는 자식 Agent로 역할을 나눈 워크플로입니다.",
-  readTime: '3 min read',
   explanationOnly: true,
   sections: { pipeline: ["자식 워크플로에서 입력 수신·조건 분기","child agent에서 생성 요청 처리","부모 Agent에서 STORY MAKER 도구 사용"] },
   studyNotes: [

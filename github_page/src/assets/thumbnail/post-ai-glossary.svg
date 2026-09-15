@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#25323b"/>
+  <rect x="36" y="36" width="728" height="378" rx="24" fill="none" stroke="#adddcc" stroke-opacity=".25"/>
+  <text x="400" y="225" dominant-baseline="central" text-anchor="middle" fill="#adddcc" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif" font-size="72" font-weight="700">AI용어 정리</text>
+</svg>

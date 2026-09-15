@@ -25,7 +25,7 @@ export function PostDetail({ onBack, post }) {
   return (
     <article className="post-detail">
       <div className="post-detail-toolbar"><button className="secondary-button" onClick={onBack} type="button">← 목록으로</button></div>
-      <div className="post-meta"><span>{post.category}</span><span>{post.date}</span><span>{post.readTime}</span></div>
+      <div className="post-meta"><span>{post.category}</span></div>
       <h2 className="post-detail-title" tabIndex={-1}>{post.title}</h2>
       <p className="post-detail-excerpt">{post.excerpt}</p>
       <img className={`post-detail-cover${post.thumbnailIsWorkflow ? ' workflow-cover' : ''}`} src={post.thumbnail} alt="" width="800" height="450" />
@@ -79,6 +79,12 @@ export function PostDetail({ onBack, post }) {
           </section>
         ))}
       </div>
+      {post.sources?.length > 0 && (
+        <aside className="study-note" aria-label="참고 자료">
+          <h4>참고 자료</h4>
+          <ul>{post.sources.map((source) => <li key={source.url}><a className="resume-project-link" href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a></li>)}</ul>
+        </aside>
+      )}
       {post.downloads?.length > 0 && (
         <aside className="study-note" aria-label="실습 소스 다운로드">
           <h4>실습 소스</h4>

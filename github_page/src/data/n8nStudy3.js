@@ -1,4 +1,4 @@
-﻿import pushdata from '../assets/screenshot/n8n-study-3/pushdata.png'
+import pushdata from '../assets/screenshot/n8n-study-3/pushdata.png'
 import chatSetup from '../assets/screenshot/n8n-study-3/채팅시 설정.png'
 import fileSearch from '../assets/screenshot/n8n-study-3/파일 검색 및 저장.png'
 import thumbnail from '../assets/thumbnail/post-n8n-rag.svg'
@@ -6,12 +6,10 @@ import thumbnail from '../assets/thumbnail/post-n8n-rag.svg'
 export const n8nStudy3 = {
   id: 'n8n-study-3',
   title: 'N8N 공부 3 · 문서 저장과 검색 챗봇',
-  date: '2026.09.11',
   topic: 'AI',
   category: 'N8N · RAG',
   thumbnail,
   excerpt: "Google Drive 문서를 Pinecone에 저장하고 채팅에서 검색하는 워크플로입니다. 단일 파일 저장, 문서 검색 챗봇과 여러 파일의 반복 저장으로 구성됩니다.",
-  readTime: '4 min read',
   explanationOnly: true,
   sections: { pipeline: ["단일 파일을 Pinecone에 저장","채팅에서 저장한 문서 검색","여러 파일을 검색해 반복 저장"] },
   studyNotes: [

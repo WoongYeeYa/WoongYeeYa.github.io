@@ -1,11 +1,10 @@
-﻿import transcriptImage from '../assets/screenshot/n8n-study-4/스크린샷 2026-09-11 191740.png'
+import transcriptImage from '../assets/screenshot/n8n-study-4/스크린샷 2026-09-11 191740.png'
 
 import thumbnail from '../assets/thumbnail/post-n8n-transcript.svg'
 
 export const n8nStudy4 = {
   id: 'n8n-study-4',
   title: 'N8N 공부 4 · 자막과 타임스탬프 데이터 처리',
-  date: '2026.09.11',
   topic: 'AI',
   category: 'N8N · Data Pipeline',
   thumbnail,
@@ -13,7 +12,6 @@ export const n8nStudy4 = {
   workflowImageAlt: '폼에서 자막 HTTP 요청, Transcript와 Timestamps 분기, Merge append, Supabase 저장소, 시트 추가로 이어지는 구성',
   workflowImageCaption: '스크린샷 2026-09-11 191740 · 클릭하면 원본을 크게 볼 수 있습니다.',
   excerpt: "폼 입력을 받아 자막과 타임스탬프 데이터를 처리하고 Supabase와 Google Sheets로 전달하는 워크플로입니다.",
-  readTime: '3 min read',
   explanationOnly: true,
   sections: { pipeline: ["폼 입력 수신","HTTP 요청으로 자막 데이터 가져오기","자막과 타임스탬프 처리","항목 목록 병합","벡터 저장과 시트 기록"] },
   studyNotes: [

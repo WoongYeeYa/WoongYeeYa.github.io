@@ -11,7 +11,7 @@ import addedImage2_0_7 from '../assets/screenshot/n8n-study-2/샘플데이타시
 import addedImage2_0_8 from '../assets/screenshot/n8n-study-2/시트 노드 설정.png'
 import addedImage2_0_9 from '../assets/screenshot/n8n-study-2/프롬프트 입력.png'
 import addedImage2_0_10 from '../assets/screenshot/n8n-study-2/성공한 모습.png'
-﻿import thumbnail from '../assets/thumbnail/post-n8n-calendar.svg'
+import thumbnail from '../assets/thumbnail/post-n8n-calendar.svg'
 
 import workflowImage from '../assets/screenshot/n8n-study-2/캘린더.png'
 import sheetsImage from '../assets/screenshot/n8n-study-2/구글 시트 테스트.png'
@@ -20,12 +20,10 @@ import emailImage from '../assets/screenshot/n8n-study-2/이메일 테스트.png
 export const n8nStudy2 = {
   id: 'n8n-study-2',
   title: 'N8N 공부 2 · 캘린더·시트·이메일 비서',
-  date: '2026.09.11',
   topic: 'AI',
   category: 'N8N · App Tools',
   thumbnail,
   excerpt: "채팅과 외부 워크플로 요청으로 구글 시트, 이메일과 캘린더를 다루는 AI 비서입니다. 각 앱의 조회·수정·전송 작업을 Agent의 도구로 연결한 구성입니다.",
-  readTime: '3 min read',
   explanationOnly: true,
   sections: { pipeline: ["구글 시트 조회·추가·수정·삭제","Gmail 메시지 조회·전송·삭제","캘린더 일정 조회·생성·삭제"] },
   studyNotes: [

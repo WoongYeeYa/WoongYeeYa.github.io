@@ -1,4 +1,4 @@
-﻿import n8nThumbnail from '../assets/thumbnail/post-n8n.svg'
+import n8nThumbnail from '../assets/thumbnail/post-n8n.svg'
 import cloudflaredImage from '../assets/screenshot/n8n-study-1/cloudflared설정.png'
 import environmentImage from '../assets/screenshot/n8n-study-1/N8N 환경설정.png'
 import ownerImage from '../assets/screenshot/n8n-study-1/기본 로그인.png'
@@ -9,12 +9,10 @@ import resetImage from '../assets/screenshot/n8n-study-1/비밀번호 초기화.
 export const n8nStudy1 = {
     id: 'n8n-study-1',
     title: 'N8N 공부 1 · 환경 설정과 기본 개념',
-    date: '2026.09.11',
     topic: 'AI',
     category: 'N8N',
     thumbnail: n8nThumbnail, // 추후 전달받은 썸네일로 교체
     excerpt: 'Docker에서 localhost로 설정되는 Webhook URL 문제를 Cloudflared 임시 주소로 해결하고 n8n 실행 환경을 구성했습니다. 계정 설정과 기본 화면, 자동화·API·HTTP·노드의 기본 개념과 계정 초기화 방법을 함께 정리합니다.',
-    readTime: '10 min read',
     explanationOnly: true,
     explanationTitle: '환경 설정과 기본 개념',
     explanationDescription: '실행 환경 구성부터 기본 사용과 계정 초기화까지',

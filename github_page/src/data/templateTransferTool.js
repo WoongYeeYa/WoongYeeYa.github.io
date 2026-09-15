@@ -1,14 +1,12 @@
-﻿import thumbnail from '../assets/thumbnail/post-template-transfer.svg'
+import thumbnail from '../assets/thumbnail/post-template-transfer.svg'
 
 export const templateTransferTool = {
   id: 'template-transfer-tool',
   title: 'TemplateTransfer Tool · Word 문서를 HWP로 옮기기',
-  date: '2026.09.14',
   topic: '코딩',
   category: 'Python · MCP · 문서 변환',
   thumbnail,
   excerpt: '공공 사업에서 전달받은 Word 문서를 HWP로 옮기기 위해 시작한 도구입니다. MCP의 서식 처리 한계와 한글 자동화에서 겪은 문제를 정리하고, 변환이 차단된 것인지 공식 자료를 확인했습니다.',
-  readTime: '4 min read',
   sections: {
     pipeline: ['기관에서 받은 Word 문서를 HWP로 옮기는 도구 구상', 'HWP 관련 MCP로 문서와 표 서식 재현 시도', '셀 병합·배경색 등 서식 처리 문제 확인', '한글에서 Word 문서를 직접 열어 HWP로 저장하는 방법 검토', '공식 문서로 지원 범위와 보안·호환성 제약 확인'],
     problems: ['HWP 관련 MCP를 사용하는 과정에서 셀 병합과 색칠 등 다양한 서식 처리 문제가 발생했습니다. 한글에서 Word 문서를 직접 열어 저장하는 방법도 시도했지만 원하는 결과를 얻지 못해, 기능이 막힌 것인지 의문이 생겼습니다.'],

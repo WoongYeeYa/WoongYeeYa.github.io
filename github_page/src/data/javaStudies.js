@@ -1,4 +1,4 @@
-﻿import fundamentalsThumbnail from '../assets/thumbnail/post-java-1.svg'
+import fundamentalsThumbnail from '../assets/thumbnail/post-java-1.svg'
 import objectsThumbnail from '../assets/thumbnail/post-java-2.svg'
 import guiThumbnail from '../assets/thumbnail/post-java-3.svg'
 import dataThumbnail from '../assets/thumbnail/post-java-4.svg'
@@ -23,12 +23,10 @@ function createStudy(number, title, thumbnail, excerpt, pipeline, studyNotes) {
   return {
     id: `java-study-${number}`,
     title: `Java 공부 ${number} · ${title}`,
-    date: '2026.09.14',
     topic: '코딩',
     category: 'Java · 강의 노트',
     thumbnail,
     excerpt,
-    readTime: `${Math.max(5, Math.ceil(studyNotes.length * 0.9))} min read`,
     explanationOnly: true,
     explanationTitle: '공부 흐름',
     explanationLabel: 'Java',

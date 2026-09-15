@@ -1,4 +1,4 @@
-﻿import thumbnail from '../assets/thumbnail/post-discord-gemini.svg'
+import thumbnail from '../assets/thumbnail/post-discord-gemini.svg'
 import secretKeyImage from '../assets/screenshot/discordbot/디스코드 시크릿키.png'
 import permissionImage from '../assets/screenshot/discordbot/디코 권한 설정.png'
 import batchRunImage from '../assets/screenshot/discordbot/봇 배치 파일 실행 .png'
@@ -12,12 +12,10 @@ import imageGenerationImage from '../assets/screenshot/discordbot/이미지생�
 export const discordGeminiBot = {
   id: 'discord-gemini-bot',
   title: 'Discord Gemini Bot · 대화와 음성, 일정 관리를 돕는 매니저',
-  date: '2026.09.14',
   topic: 'AI',
   category: 'Discord · Gemini · Python',
   thumbnail,
   excerpt: 'Discord를 주로 사용하는 사람이 채팅과 음성으로 질문하고 간단한 일정 정리와 서버 작업을 맡길 수 있도록 만든 개인 매니저 봇입니다. Gemini 대화에 검색엔진을 연결해 최신 정보도 확인할 수 있게 구성했습니다.',
-  readTime: '8 min read',
   sections: {
     pipeline: ['Discord 애플리케이션과 봇 인증 정보 준비', '봇 권한 설정과 서버 설치', 'Windows 배치 파일로 봇 실행', 'Gemini 기본 대화와 자동 응답 연결', '검색엔진을 이용한 최신 정보 보완', '이미지 분석·생성 기능 연결', '음성 명령과 서버 관리 기능 구성'],
     problems: ['Gemini 모델의 기본 지식은 학습 및 배포 시점의 범위에 머물러 있어 현재 날씨나 최근 정보에 그대로 답하기 어려웠습니다.', 'Gemini API에 현재 메시지만 전달했을 때 봇이 앞에서 자신이 답한 내용과 사용자의 이전 질문을 기억하지 못해 대화가 이어지지 않았습니다.', '이미지 생성에 사용한 Preview 모델은 모델 제공 상태가 바뀌면 더 이상 호출할 수 있어, 기능 코드가 남아 있어도 같은 모델명으로 실행되지 않을 수 있습니다.', 'Discord 메시지 응답, 음성 처리와 서버 관리가 한 흐름에 모이면 기능별 상태와 오류를 관리하기 어려웠습니다.'],

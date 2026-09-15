@@ -1,4 +1,4 @@
-﻿import thumbnail from '../assets/thumbnail/post-open-webui.svg'
+import thumbnail from '../assets/thumbnail/post-open-webui.svg'
 import backendSetup from '../assets/screenshot/open-webui/open webui 1.png'
 import backendPackages from '../assets/screenshot/open-webui/open webui 2.png'
 import backendStartup from '../assets/screenshot/open-webui/open webui 3.png'
@@ -20,12 +20,10 @@ import ollamaChat from '../assets/screenshot/open-webui/open webui 17.png'
 export const openWebuiStudy = {
   id: 'open-webui-study-1',
   title: 'Open WebUI 공부 1 · 환경 설정과 로그인',
-  date: '2026.09.14',
   topic: 'AI',
   category: 'Open WebUI · Python · Node.js',
   thumbnail,
   excerpt: '회사나 개인용 GPT 환경을 만들기 위해 Anaconda와 Node.js를 준비했습니다. 백엔드와 프론트엔드 실행, 환경 구성 중 발생한 문제 해결부터 로그인 성공까지 정리했습니다.',
-  readTime: '6 min read',
   explanationOnly: true,
   explanationTitle: '공부 과정',
   explanationLabel: 'Open WebUI',
@@ -141,12 +139,10 @@ export const openWebuiStudy = {
 export const openWebuiStudy2 = {
   id: 'open-webui-study-2',
   title: 'Open WebUI 공부 2 · Gemini와 Ollama 연결',
-  date: '2026.09.14',
   topic: 'AI',
   category: 'Open WebUI · Gemini · Ollama',
   thumbnail,
   excerpt: 'Google AI Studio에서 API 키를 준비해 Gemini를 연결하고 대화를 진행했습니다. Ollama 설치와 Gemma 3 모델 다운로드, 로컬 모델 연결과 대화 성공까지 정리했습니다.',
-  readTime: '5 min read',
   explanationOnly: true,
   explanationTitle: '공부 과정',
   explanationLabel: 'Open WebUI',
