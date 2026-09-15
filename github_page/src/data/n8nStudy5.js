@@ -1,3 +1,7 @@
+import addedImage5_1_0 from '../assets/screenshot/n8n-study-5/스토리 메이커 프롬프트 입력.png'
+import addedImage5_1_1 from '../assets/screenshot/n8n-study-5/이야기를 작성한 모습.png'
+import addedImage5_0_0 from '../assets/screenshot/n8n-study-5/스토리메이커 자식에서 설정해줘야될 설정 지정.png'
+import addedImage5_0_1 from '../assets/screenshot/n8n-study-5/자식 노드 if.png'
 ﻿import childImage from '../assets/screenshot/n8n-study-5/스토리 메이커 자식 에이전트.png'
 import parentImage from '../assets/screenshot/n8n-study-5/스토리 메이커 부모 에이전트.png'
 import thumbnail from '../assets/thumbnail/post-n8n-story.svg'
@@ -29,6 +33,22 @@ export const n8nStudy5 = {
       "result": "조건이 참이면 요청이 child agent로 전달되어 Gemini가 스토리를 생성하고, 조건이 맞지 않으면 try again 값으로 재요청 경로를 반환합니다."
     },
     {
+      "title": "1-1. 자식 워크플로 입력 항목 정의",
+      "image": addedImage5_0_0,
+      "imageAlt": "자식 워크플로 입력 항목 정의",
+      "paragraphs": [
+        "외부 워크플로 실행 트리거에 setting, mainCharacter, adventure를 문자열 입력으로 정의한 화면입니다."
+      ]
+    },
+    {
+      "title": "1-2. 자식 워크플로 If 조건 설정",
+      "image": addedImage5_0_1,
+      "imageAlt": "자식 워크플로 If 조건 설정",
+      "paragraphs": [
+        "자식 워크플로 If 조건 설정 화면입니다."
+      ]
+    },
+    {
       "title": "2. 스토리메이커 부모 · 채팅 요청과 작업 위임",
       "image": parentImage,
       "imageAlt": "채팅 Agent에 Gemini 모델과 STORY MAKER 워크플로 도구를 연결한 구성",
@@ -41,6 +61,22 @@ export const n8nStudy5 = {
         "STORY MAKER: 스토리 생성 작업을 서브워크플로로 맡기기 위한 도구입니다."
       ],
       "result": "부모 Agent가 채팅 요청을 해석한 뒤 STORY MAKER를 호출하고, 자식 워크플로에서 생성한 결과를 받아 사용자에게 전달하는 역할 분리가 완성되었습니다."
+    },
+    {
+      "title": "2-1. 부모 Agent에 이야기 생성 요청",
+      "image": addedImage5_1_0,
+      "imageAlt": "부모 Agent에 이야기 생성 요청",
+      "paragraphs": [
+        "채팅에 주인공과 배경을 입력하고 부모 Agent가 STORY MAKER 도구를 호출한 화면입니다."
+      ]
+    },
+    {
+      "title": "2-2. 이야기를 작성한 모습",
+      "image": addedImage5_1_1,
+      "imageAlt": "이야기를 작성한 모습",
+      "paragraphs": [
+        "이야기를 작성한 모습 화면입니다."
+      ]
     }
   ],
 }

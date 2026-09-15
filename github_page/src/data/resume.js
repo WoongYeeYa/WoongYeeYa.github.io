@@ -39,8 +39,6 @@ export const resume = {
       period: '현재 운영 중 · 개인 프로젝트',
       description: '배움과 문제 해결 과정을 정리하는 개인 사이트입니다. 카테고리별 글 탐색과 여섯 항목으로 구성한 공부 기록 상세 화면을 제공합니다.',
       tags: ['React', 'Vite', 'CSS'],
-      url: 'https://github.com/WoongYeeYa/WoongYeeYa.github.io',
-      linkLabel: '소스 코드 보기',
     },
   ],
 }
