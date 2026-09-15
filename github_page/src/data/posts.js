@@ -12,14 +12,14 @@ import { javaStudies } from './javaStudies'
 export const postCategories = ['AI', '코딩', '일상·기록']
 
 export const posts = [
-  templateTransferTool,
-  ...javaStudies,
   openWebuiStudy2,
   openWebuiStudy,
   discordGeminiBot,
+  templateTransferTool,
   n8nStudy5,
   n8nStudy4,
   n8nStudy3,
   n8nStudy2,
-  n8nStudy1
+  n8nStudy1,
+    ...javaStudies
 ]

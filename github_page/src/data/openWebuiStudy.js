@@ -92,7 +92,7 @@ export const openWebuiStudy = {
     },
     {
       title: '10. 프론트엔드 준비 · 패키지 설치와 실행 명령',
-      paragraphs: ['백엔드를 실행한 상태에서 별도 터미널을 열고 C:\\workspace\\open-webui 프로젝트 폴더로 이동했습니다. 프론트엔드는 아래 세 명령을 한 줄씩 순서대로 실행했습니다.', '첫 번째 화면은 npm i --force로 프론트엔드에 필요한 패키지를 설치하는 과정입니다. 설치 중 표시된 패키지 버전과 의존성 관련 로그도 함께 캡처했습니다.'],
+      paragraphs: ['백엔드를 실행한 상태에서 별도 터미널을 열고 C:\\workspace\\open-webui 프로젝트 폴더로 이동했습니다. 프론트엔드는 아래 세 명령을 한 줄씩 순서대로 실행했습니다.', '첫 번째 화면은 npm i --force로 프론트엔드에 필요한 패키지를 설치하는 과정입니다. 패키지 버전과 의존성 관련 로그가 표시되어 있습니다.'],
       image: frontendPackages,
       imageAlt: '프로젝트 폴더에서 npm i --force로 프론트엔드 패키지를 설치하는 화면',
       imageCaption: '4. 프론트엔드 패키지 설치 과정',
@@ -116,7 +116,7 @@ export const openWebuiStudy = {
     },
     {
       title: '13. 로컬 실행 결과 · 백엔드와 프론트엔드 로그',
-      paragraphs: ['백엔드와 프론트엔드가 모두 실행된 터미널을 나란히 캡처했습니다. 왼쪽에는 Open WebUI 백엔드의 시작 로그가, 오른쪽에는 프론트엔드 준비 과정과 Vite 개발 서버의 ready 메시지가 표시되어 있습니다.', '프론트엔드 터미널에 표시된 http://localhost:5173/으로 접속해 Open WebUI 화면을 확인했습니다. 두 서버는 각각의 터미널에서 실행한 상태로 사용했습니다.'],
+      paragraphs: ['왼쪽 터미널에는 Open WebUI 백엔드의 시작 로그가, 오른쪽에는 프론트엔드 준비 과정과 Vite 개발 서버의 ready 메시지가 표시되어 있습니다.', '프론트엔드 터미널에 표시된 http://localhost:5173/으로 접속해 Open WebUI 화면을 확인했습니다. 두 서버는 각각의 터미널에서 실행한 상태로 사용했습니다.'],
       image: serversReady,
       imageAlt: '백엔드 시작 로그와 Vite 프론트엔드 개발 서버 실행 로그를 나란히 표시한 화면',
       imageCaption: '6. 백엔드와 프론트엔드 실행 결과',
@@ -164,7 +164,7 @@ export const openWebuiStudy2 = {
     },
     {
       title: '2. Gemini API 준비 · 키 확인과 복사',
-      paragraphs: ['API 키 목록에서 키를 선택해 세부정보를 열었습니다. 이 화면에서 키 이름과 연결된 프로젝트를 확인하고, 키 복사 버튼으로 API 호출에 사용할 값을 가져오는 과정입니다. 캡처에서는 API 키와 프로젝트 정보를 가려 두었습니다.'],
+      paragraphs: ['API 키 목록에서 키를 선택해 세부정보를 열었습니다. 이 화면에서 키 이름과 연결된 프로젝트를 확인하고, 키 복사 버튼으로 API 호출에 사용할 값을 가져오는 과정입니다. API 키와 프로젝트 정보는 가려 두었습니다.'],
       image: apiKeyDetails,
       imageAlt: 'API 키와 프로젝트 정보가 가려진 Google AI Studio API 키 세부정보 화면',
       imageCaption: '10. API 키 세부정보 확인과 복사',
@@ -186,14 +186,14 @@ export const openWebuiStudy2 = {
     },
     {
       title: '5. Gemini 연결 결과 · 모델 목록 확인',
-      paragraphs: ['연결 설정 후 대화 화면의 모델 선택 메뉴에 Gemini 모델 목록이 표시되었습니다. models/gemini-2.5-flash와 models/gemini-2.5-pro 등을 확인하고, models/gemini-2.5-flash를 선택한 화면을 캡처했습니다. Open WebUI에서 Gemini 모델을 불러와 선택할 수 있는 상태까지 확인한 과정입니다.'],
+      paragraphs: ['연결 설정 후 대화 화면의 모델 선택 메뉴에 Gemini 모델 목록이 표시되었습니다. models/gemini-2.5-flash와 models/gemini-2.5-pro 등을 확인하고 models/gemini-2.5-flash를 선택했습니다. Open WebUI에서 Gemini 모델을 불러와 선택할 수 있는 상태입니다.'],
       image: geminiModels,
       imageAlt: 'Open WebUI 모델 선택 메뉴에 Gemini 모델 목록이 표시된 화면',
       imageCaption: '13. Gemini 모델 목록과 선택 결과',
     },
     {
       title: '6. Gemini 대화 결과 · 메시지 전송과 응답 확인',
-      paragraphs: ['models/gemini-2.5-flash를 선택하고 대화를 진행했습니다. “안녕하세요”라는 인사와 이어지는 질문에 Gemini가 한국어로 응답하는 모습을 캡처했습니다. API 키와 연결 URL을 설정한 뒤 Open WebUI에서 메시지를 보내고 실제 답변을 받는 과정까지 확인했습니다.'],
+      paragraphs: ['models/gemini-2.5-flash를 선택한 뒤 Gemini의 한국어 응답을 확인했습니다. API 키와 연결 URL을 통해 Open WebUI에서 Gemini 모델과 대화할 수 있는 상태입니다.'],
       image: geminiChat,
       imageAlt: 'Open WebUI에서 Gemini 2.5 Flash와 한국어 메시지를 주고받은 화면',
       imageCaption: '14. Gemini와의 대화 성공 화면',
@@ -220,7 +220,7 @@ export const openWebuiStudy2 = {
     },
     {
       title: '10. Ollama 대화 결과 · 로컬 모델 응답 확인',
-      paragraphs: ['gemma3:1b를 선택하고 “안녕하세요”, “궁금한게 많아요”라는 메시지를 보냈습니다. Ollama에서 실행한 로컬 Gemma 3 모델이 한국어로 답변하는 모습을 캡처했습니다. 모델 설치와 연결에 이어 Open WebUI에서 실제 대화를 주고받는 과정까지 확인했습니다.'],
+      paragraphs: ['gemma3:1b를 선택한 뒤 로컬 Gemma 3 모델의 한국어 응답을 확인했습니다. 모델 설치와 연결을 마치고 Open WebUI에서 Ollama 모델과 대화할 수 있는 상태입니다.'],
       image: ollamaChat,
       imageAlt: 'Open WebUI에서 Ollama의 gemma3:1b 모델과 한국어로 대화한 화면',
       imageCaption: '17. Ollama 로컬 모델과의 대화 성공 화면',
