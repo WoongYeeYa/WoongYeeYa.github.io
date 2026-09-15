@@ -3,7 +3,7 @@ export const resume = {
   name: '조영웅',
   handle: 'WoongYeeYa',
   headline: '기획을 이해하고, 화면 개발부터 테스트까지 함께하는 개발자',
-  summary: 'Java·Spring 기반 교육자료 기술 심사 시스템에서 화면 개발, 소스 배포, 테스트와 오류 수정을 담당했습니다. 게임 기획에서 쌓은 문서 작성과 소통 경험을 바탕으로 프로젝트의 전체 흐름을 이해하고, 팀이 필요한 정보를 정리하며 문제를 해결합니다.',
+  summary: '기능을 만들기 전에 왜 필요한지, 어떻게 쓰일지 먼저 생각합니다. 복잡한 내용을 알기 쉽게 정리하고 동료와 생각을 나누며 해결 방법을 찾습니다. 모르는 것은 배우고, 맡은 일은 끝까지 확인하는 개발자가 되고자 합니다.',
   github: 'https://github.com/WoongYeeYa',
   email: 'arhyun08311101@gmail.com',
   skills: [
