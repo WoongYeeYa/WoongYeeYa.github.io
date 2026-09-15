@@ -1,8 +1,9 @@
-import fundamentalsThumbnail from '../assets/post-java-1.svg'
-import objectsThumbnail from '../assets/post-java-2.svg'
-import guiThumbnail from '../assets/post-java-3.svg'
-import dataThumbnail from '../assets/post-java-4.svg'
-import networkThumbnail from '../assets/post-java-5.svg'
+﻿import fundamentalsThumbnail from '../assets/thumbnail/post-java-1.svg'
+import objectsThumbnail from '../assets/thumbnail/post-java-2.svg'
+import guiThumbnail from '../assets/thumbnail/post-java-3.svg'
+import dataThumbnail from '../assets/thumbnail/post-java-4.svg'
+import networkThumbnail from '../assets/thumbnail/post-java-5.svg'
+import { javaExamples } from './javaExamples'
 
 const sourceArchives = import.meta.glob('../assets/file/notion/*.zip', {
   eager: true,
@@ -33,7 +34,10 @@ function createStudy(number, title, thumbnail, excerpt, pipeline, studyNotes) {
     explanationLabel: 'Java',
     explanationDescription: '강의 노트에서 연결되는 개념과 예제를 함께 정리한 내용',
     sections: { pipeline },
-    studyNotes,
+    studyNotes: studyNotes.map((note, noteIndex) => ({
+      ...note,
+      examples: javaExamples[number].filter((example) => example.noteIndex === noteIndex),
+    })),
     downloads: studyArchives[number].map((filename) => ({
       title: filename === 'src.zip' ? '전체 소스 · src.zip' : filename,
       filename,

@@ -1,6 +1,6 @@
-import childImage from '../assets/screenshot/n8n-study-5/스토리 메이커 자식 에이전트.png'
+﻿import childImage from '../assets/screenshot/n8n-study-5/스토리 메이커 자식 에이전트.png'
 import parentImage from '../assets/screenshot/n8n-study-5/스토리 메이커 부모 에이전트.png'
-import thumbnail from '../assets/post-n8n-story.svg'
+import thumbnail from '../assets/thumbnail/post-n8n-story.svg'
 
 export const n8nStudy5 = {
   id: 'n8n-study-5',
@@ -25,7 +25,8 @@ export const n8nStudy5 = {
         "true 경로: Google Gemini Chat Model을 사용하는 child agent로 요청을 전달합니다.",
         "false 경로: try again 필드 설정 노드로 전달합니다.",
         "child agent: 전달받은 생성 요청을 처리하는 Agent입니다."
-      ]
+      ],
+      "result": "조건이 참이면 요청이 child agent로 전달되어 Gemini가 스토리를 생성하고, 조건이 맞지 않으면 try again 값으로 재요청 경로를 반환합니다."
     },
     {
       "title": "2. 스토리메이커 부모 · 채팅 요청과 작업 위임",
@@ -38,11 +39,8 @@ export const n8nStudy5 = {
         "채팅 트리거: 사용자의 요청을 받습니다.",
         "AI Agent와 Gemini: 요청을 처리하고 응답을 생성합니다.",
         "STORY MAKER: 스토리 생성 작업을 서브워크플로로 맡기기 위한 도구입니다."
-      ]
+      ],
+      "result": "부모 Agent가 채팅 요청을 해석한 뒤 STORY MAKER를 호출하고, 자식 워크플로에서 생성한 결과를 받아 사용자에게 전달하는 역할 분리가 완성되었습니다."
     }
-  ],
-  sources: [
-    { title: 'n8n Docs · Call n8n Workflow Tool', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolworkflow/' },
-    { title: 'n8n Docs · Execute Sub-workflow Trigger', url: 'https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflowtrigger/' },
   ],
 }

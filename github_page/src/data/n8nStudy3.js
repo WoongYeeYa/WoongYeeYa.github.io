@@ -1,7 +1,7 @@
-import pushdata from '../assets/screenshot/n8n-study-3/pushdata.png'
+﻿import pushdata from '../assets/screenshot/n8n-study-3/pushdata.png'
 import chatSetup from '../assets/screenshot/n8n-study-3/채팅시 설정.png'
 import fileSearch from '../assets/screenshot/n8n-study-3/파일 검색 및 저장.png'
-import thumbnail from '../assets/post-n8n-rag.svg'
+import thumbnail from '../assets/thumbnail/post-n8n-rag.svg'
 
 export const n8nStudy3 = {
   id: 'n8n-study-3',
@@ -28,7 +28,8 @@ export const n8nStudy3 = {
         "Recursive Character Text Splitter: 문서를 작은 텍스트 단위로 나눕니다.",
         "Embeddings OpenAI: 텍스트를 검색에 사용할 벡터로 변환합니다.",
         "Pinecone Vector Store: 문서 벡터를 저장하는 역할을 합니다."
-      ]
+      ],
+      "result": "Drive에서 내려받은 파일이 문서 단위로 읽히고 작은 텍스트로 분할된 뒤, 임베딩 벡터로 변환되어 Pinecone 검색 저장소에 들어갑니다."
     },
     {
       "title": "2. 채팅 시 설정 · 저장한 문서를 검색하는 챗봇",
@@ -43,7 +44,8 @@ export const n8nStudy3 = {
         "information: 문서 검색을 Agent가 사용할 수 있는 도구로 연결합니다.",
         "Pinecone Vector Store: 질문과 관련된 문서를 찾는 저장소입니다.",
         "OpenAI Chat Model1: 검색 도구에서 가져온 내용을 정리하는 모델입니다."
-      ]
+      ],
+      "result": "채팅 질문이 들어오면 information 도구가 Pinecone에서 관련 문서를 찾아 Agent에 전달하고, Agent가 검색된 내용을 바탕으로 답변을 생성합니다."
     },
     {
       "title": "3. 파일 검색 및 저장 · 여러 문서의 반복 처리",
@@ -59,13 +61,8 @@ export const n8nStudy3 = {
         "loop 경로: 파일 데이터를 Pinecone 저장 단계로 전달하고 반복을 이어갑니다.",
         "done 경로: 반복 처리가 끝나는 출력입니다.",
         "문서 로더·텍스트 분할기·임베딩: 파일을 분할된 문서 벡터로 변환합니다."
-      ]
+      ],
+      "result": "검색된 여러 Drive 파일이 Loop Over Items에서 차례로 처리되고, 각 파일의 분할된 문서 벡터가 Pinecone에 반복 저장됩니다. 모든 항목을 처리하면 done 경로로 종료됩니다."
     }
-  ],
-  sources: [
-    { title: 'n8n Docs · Pinecone Vector Store', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstorepinecone/' },
-    { title: 'n8n Docs · Default Data Loader', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentdefaultdataloader/' },
-    { title: 'n8n Docs · Vector Store Question Answer Tool', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolvectorstore/' },
-    { title: 'n8n Docs · Loop Over Items', url: 'https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.splitinbatches/' },
   ],
 }

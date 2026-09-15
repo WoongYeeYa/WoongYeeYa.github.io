@@ -1,7 +1,4 @@
-import thumbnail from '../assets/post-template-transfer.svg'
-
-const repository = 'https://github.com/WoongYeeYa/TemplateTransfer_Tool'
-const code = `${repository}/blob/719fa358c8c639ce5ae1b2d1a034d149ace649d3`
+﻿import thumbnail from '../assets/thumbnail/post-template-transfer.svg'
 
 export const templateTransferTool = {
   id: 'template-transfer-tool',
@@ -42,15 +39,5 @@ export const templateTransferTool = {
       title: '5. 지원되는 변환과 원본 서식 보존의 차이',
       paragraphs: ['한컴의 호환성 문서에서 Word DOCX를 한글로 불러올 때 표의 병합, 글꼴·자간과 그림 위치 등이 다르게 나타날 수 있다는 내용을 확인했습니다. 한글의 불러오기 기능을 사용해도 문서 형식 차이에 따른 서식 변화가 생길 수 있었습니다.', '처음에는 DOC 문서까지 옮기는 도구를 생각했지만 현재 변환 코드는 python-docx로 DOCX를 읽는 구조입니다. 업로드 화면과 API에서는 DOC도 받도록 했으나, 구형 DOC를 읽어 변환하는 기능까지 완성하지는 못했습니다.'],
     },
-  ],
-  sources: [
-    { title: 'GitHub · TemplateTransfer_Tool', url: repository },
-    { title: '변환 코드 · DOCX 재구성 및 HWP 저장', url: `${code}/backend/hwp_converter.py` },
-    { title: '저장소의 제약 기록 · README', url: `${code}/README.md` },
-    { title: 'HWPX MCP 시도 기록', url: `${code}/hwpx_converter_new.py` },
-    { title: '한컴 공식 · Open / SaveAs 문서 포맷과 필터', url: 'https://forum.developer.hancom.com/t/saveas/660' },
-    { title: '한컴 공식 · 오토메이션과 파일 접근 보안 모듈', url: 'https://developer.hancom.com/hwpautomation' },
-    { title: '한컴 공식 · Word와 한글의 서식 호환성', url: 'https://help.hancom.com/hoffice/multi/ko_kr/hwp/support/compatibility.htm' },
-    { title: '한컴 공식 · OCX 컨트롤 지원 종료', url: 'https://forum.developer.hancom.com/t/ocx/769' },
   ],
 }

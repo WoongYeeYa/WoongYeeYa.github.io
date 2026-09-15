@@ -1,4 +1,4 @@
-import n8nThumbnail from '../assets/post-n8n.svg'
+﻿import n8nThumbnail from '../assets/thumbnail/post-n8n.svg'
 import cloudflaredImage from '../assets/screenshot/n8n-study-1/cloudflared설정.png'
 import environmentImage from '../assets/screenshot/n8n-study-1/N8N 환경설정.png'
 import ownerImage from '../assets/screenshot/n8n-study-1/기본 로그인.png'
@@ -13,48 +13,15 @@ export const n8nStudy1 = {
     topic: 'AI',
     category: 'N8N',
     thumbnail: n8nThumbnail, // 추후 전달받은 썸네일로 교체
-    excerpt: 'Cloudflared와 Docker로 n8n 실행 환경을 구성하고 계정 설정과 기본 화면을 살펴봅니다. 자동화·API·HTTP·노드의 기본 개념과 비밀번호를 잊었을 때 계정을 초기화하는 방법을 함께 정리합니다.',
+    excerpt: 'Docker에서 localhost로 설정되는 Webhook URL 문제를 Cloudflared 임시 주소로 해결하고 n8n 실행 환경을 구성했습니다. 계정 설정과 기본 화면, 자동화·API·HTTP·노드의 기본 개념과 계정 초기화 방법을 함께 정리합니다.',
     readTime: '10 min read',
     explanationOnly: true,
     explanationTitle: '환경 설정과 기본 개념',
     explanationDescription: '실행 환경 구성부터 기본 사용과 계정 초기화까지',
     sections: {
-      pipeline: ['Cloudflared 터널 실행', 'Docker 컨테이너 환경 설정', '소유자 계정 생성', '로그인과 기본 화면', '자동화·API·HTTP·노드 이해', '비밀번호를 잊었을 때 계정 초기화'],
+      pipeline: ['자동화·API·HTTP·Webhook·Node 기본 개념', 'localhost Webhook URL 문제 확인', 'Cloudflared 터널로 외부 임시 주소 발급', 'Docker 컨테이너의 WEBHOOK_URL 설정', '소유자 계정 생성', '로그인과 기본 화면', '비밀번호를 잊었을 때 계정 초기화'],
     },
     studyNotes: [
-      {
-        title: '환경 설정 1. CLOUDFLARED · 로컬 n8n을 외부 주소로 연결',
-        image: cloudflaredImage,
-        imageAlt: 'localhost 5678을 대상으로 cloudflared 터널을 실행하고 trycloudflare 주소를 발급받은 터미널',
-        paragraphs: ['로컬에서 실행하는 n8n을 외부 HTTPS 주소로 연결하기 위한 구성입니다. 터미널에서 아래 명령어를 실행하면 localhost의 5678 포트를 대상으로 임시 터널 주소가 발급됩니다.', '발급된 trycloudflare.com 주소는 n8n의 Webhook 외부 주소에 사용합니다. Quick Tunnel을 새로 실행해 주소가 바뀌면 WEBHOOK_URL도 새 주소로 맞춥니다.'],
-        command: 'cloudflared tunnel --url http://localhost:5678',
-      },
-      {
-        title: '환경 설정 2. N8N · Docker 실행 환경과 로컬 저장',
-        image: environmentImage,
-        imageAlt: 'Docker Desktop에서 n8n 컨테이너의 포트, 로컬 폴더 연결과 WEBHOOK_URL을 지정한 화면',
-        paragraphs: ['Docker Desktop에서 n8nio/n8n 이미지를 실행할 때 포트, 저장 위치와 환경 변수를 지정하는 화면입니다. 컨테이너 이름은 n8n-docker이고, 호스트의 5678 포트를 컨테이너의 5678 포트와 연결합니다.', '로컬 폴더 C:/workspace/n8n-data를 컨테이너의 /home/node/.n8n에 연결해 n8n 데이터가 PC에 저장되도록 구성했습니다. WEBHOOK_URL에는 앞에서 발급받은 Cloudflared HTTPS 주소를 입력합니다.'],
-        items: ['Ports: 5678 → 5678/tcp로 연결합니다.', 'Volumes: 로컬 데이터 폴더 → /home/node/.n8n을 연결합니다.', 'WEBHOOK_URL: 외부에서 n8n Webhook에 요청을 보낼 때 사용하는 기본 주소입니다.', 'Run: 지정한 설정으로 컨테이너를 실행합니다.'],
-      },
-      {
-        title: '환경 설정 3. 기본 로그인 · 소유자 계정 생성',
-        image: ownerImage,
-        imageAlt: 'n8n 소유자 계정의 이메일, 이름과 비밀번호를 입력하는 초기 설정 화면',
-        paragraphs: ['n8n을 처음 사용할 때 소유자 계정을 만드는 화면입니다. 브라우저에서 http://localhost:5678로 접속하고 Set up owner account에서 이메일, 이름과 비밀번호를 입력한 뒤 Next로 진행합니다.'],
-      },
-      {
-        title: '환경 설정 4. N8N 기본화면 · 계정으로 로그인',
-        image: loginImage,
-        imageAlt: '이메일과 비밀번호로 접속하는 n8n Sign in 화면',
-        paragraphs: ['계정 설정 이후 n8n에 접속할 때 사용하는 로그인 화면입니다. 앞에서 만든 계정의 Email과 Password를 입력하고 Sign in으로 들어갑니다.'],
-      },
-      {
-        title: '로그인 후 기본화면 · 워크플로와 실행 기록 관리',
-        image: overviewImage,
-        imageAlt: '워크플로 목록과 Credentials, Executions, Data tables 탭을 보여 주는 n8n Overview 화면',
-        paragraphs: ['로그인 후 워크플로를 만들고 관리하는 Overview 화면입니다. Create Workflow로 새 워크플로를 만들고, 목록에서 기존 작업을 열 수 있습니다.'],
-        items: ['Workflows: 자동화 작업 목록을 관리합니다.', 'Credentials: 외부 서비스 연결에 사용하는 자격 증명을 관리합니다.', 'Executions: 워크플로 실행 기록을 확인합니다.', 'Data tables: n8n 내부에서 사용할 테이블 데이터를 관리합니다.'],
-      },
       {
         title: '1. 자동화란 무엇인가?',
         paragraphs: [
@@ -109,6 +76,44 @@ export const n8nStudy1 = {
         items: ['Triggers: 워크플로를 시작하는 조건이나 이벤트', 'Actions in app: 연결한 앱에서 데이터 조회·생성 등의 작업 수행', 'Data transformation: 다음 단계에 맞게 데이터 형태와 값을 정리', 'Flow: 조건에 따라 실행 경로를 나누거나 흐름을 제어', 'Files: 파일 데이터를 읽고 변환하는 작업', 'Advanced: 기본 노드 구성에서 더 나아간 처리에 사용할 기능'],
       },
       {
+        title: '환경 설정 1. CLOUDFLARED · 로컬 n8n을 외부 주소로 연결',
+        image: cloudflaredImage,
+        imageAlt: 'localhost 5678을 대상으로 cloudflared 터널을 실행하고 trycloudflare 주소를 발급받은 터미널',
+        paragraphs: ['Docker에서 WEBHOOK_URL 값을 따로 입력하지 않으면 n8n의 Webhook 주소가 localhost를 기준으로 만들어집니다. localhost는 현재 PC 내부를 가리키므로 외부 서비스가 해당 주소로 요청을 보낼 수 없고, 외부 이벤트를 기다리는 Webhook 노드가 실행되지 않습니다.', '외부 서비스가 로컬 n8n의 Webhook에 접근할 수 있도록 Cloudflared로 임시 공개 주소를 발급받았습니다. 터미널에서 아래 명령어를 실행하면 localhost의 5678 포트가 임시 주소와 연결됩니다.', '발급된 임시 주소는 Docker의 WEBHOOK_URL에 입력합니다. 이후 n8n에서 생성되는 Test URL과 Production URL이 외부에서 접근 가능한 주소를 사용하게 됩니다. Quick Tunnel을 새로 실행해 주소가 바뀌면 WEBHOOK_URL도 새 주소로 맞춥니다.'],
+        command: 'cloudflared tunnel --url http://localhost:5678',
+        result: 'localhost:5678과 연결된 외부 HTTPS 임시 주소가 발급되어, 외부 서비스가 n8n Webhook URL로 요청을 보낼 수 있는 경로가 만들어졌습니다.',
+      },
+      {
+        title: '환경 설정 2. N8N · Docker 실행 환경과 로컬 저장',
+        image: environmentImage,
+        imageAlt: 'Docker Desktop에서 n8n 컨테이너의 포트, 로컬 폴더 연결과 WEBHOOK_URL을 지정한 화면',
+        paragraphs: ['Docker Desktop에서 n8nio/n8n 이미지를 실행할 때 포트, 저장 위치와 환경 변수를 지정하는 화면입니다. 컨테이너 이름은 n8n-docker이고, 호스트의 5678 포트를 컨테이너의 5678 포트와 연결합니다.', '로컬 폴더 C:/workspace/n8n-data를 컨테이너의 /home/node/.n8n에 연결해 n8n 데이터가 PC에 저장되도록 구성했습니다. WEBHOOK_URL에는 앞에서 발급받은 Cloudflared HTTPS 주소를 입력합니다.'],
+        items: ['Ports: 5678 → 5678/tcp로 연결합니다.', 'Volumes: 로컬 데이터 폴더 → /home/node/.n8n을 연결합니다.', 'WEBHOOK_URL: 외부에서 n8n Webhook에 요청을 보낼 때 사용하는 기본 주소입니다.', 'Run: 지정한 설정으로 컨테이너를 실행합니다.'],
+        result: 'n8n 컨테이너가 5678 포트로 실행되고, Webhook URL에는 Cloudflared 주소가 적용되었습니다. 워크플로와 설정 데이터는 연결한 로컬 폴더에 저장됩니다.',
+      },
+      {
+        title: '환경 설정 3. 기본 로그인 · 소유자 계정 생성',
+        image: ownerImage,
+        imageAlt: 'n8n 소유자 계정의 이메일, 이름과 비밀번호를 입력하는 초기 설정 화면',
+        paragraphs: ['n8n을 처음 사용할 때 소유자 계정을 만드는 화면입니다. 브라우저에서 http://localhost:5678로 접속하고 Set up owner account에서 이메일, 이름과 비밀번호를 입력한 뒤 Next로 진행합니다.'],
+        result: '소유자 계정이 생성되어 n8n 로그인 화면과 워크플로 관리 기능을 사용할 수 있게 되었습니다.',
+      },
+      {
+        title: '환경 설정 4. N8N 기본화면 · 계정으로 로그인',
+        image: loginImage,
+        imageAlt: '이메일과 비밀번호로 접속하는 n8n Sign in 화면',
+        paragraphs: ['계정 설정 이후 n8n에 접속할 때 사용하는 로그인 화면입니다. 앞에서 만든 계정의 Email과 Password를 입력하고 Sign in으로 들어갑니다.'],
+        result: '생성한 계정으로 인증되어 n8n 기본 화면으로 이동했습니다.',
+      },
+      {
+        title: '로그인 후 기본화면 · 워크플로와 실행 기록 관리',
+        image: overviewImage,
+        imageAlt: '워크플로 목록과 Credentials, Executions, Data tables 탭을 보여 주는 n8n Overview 화면',
+        paragraphs: ['로그인 후 워크플로를 만들고 관리하는 Overview 화면입니다. Create Workflow로 새 워크플로를 만들고, 목록에서 기존 작업을 열 수 있습니다.'],
+        items: ['Workflows: 자동화 작업 목록을 관리합니다.', 'Credentials: 외부 서비스 연결에 사용하는 자격 증명을 관리합니다.', 'Executions: 워크플로 실행 기록을 확인합니다.', 'Data tables: n8n 내부에서 사용할 테이블 데이터를 관리합니다.'],
+        result: '로그인 후 워크플로 목록과 Credentials, Executions, Data tables 메뉴에 접근할 수 있는 실행 환경을 확인했습니다.',
+      },
+      {
         title: '비밀번호를 잊었을 때 · Exec에서 계정 초기화',
         image: resetImage,
         imageAlt: 'Docker Desktop의 n8n-docker 컨테이너 Exec 탭에서 user-management reset 명령어를 입력한 화면',
@@ -116,11 +121,7 @@ export const n8nStudy1 = {
         steps: ['Docker Desktop에서 Containers → n8n-docker로 이동합니다.', 'Exec 탭을 열고 아래 명령어를 입력한 뒤 Enter로 실행합니다.', '명령어 완료 후 n8n 컨테이너를 재시작하고 브라우저에서 n8n에 다시 접속합니다.', 'Set up owner account에서 이메일, 이름과 새 비밀번호를 설정합니다.'],
         command: 'n8n user-management:reset',
         afterParagraphs: ['현재 환경에서는 /home/node/.n8n이 로컬 폴더 C:/workspace/n8n-data에 연결되어 있으므로, 이 계정 초기화 명령만으로 기존 워크플로와 자격 증명 데이터가 삭제되지는 않습니다. 같은 로컬 저장 폴더를 유지한 상태에서 계정을 다시 설정해 사용합니다.'],
+        result: '사용자 관리 정보가 초기 상태로 돌아가 소유자 계정을 다시 만들 수 있으며, 로컬 볼륨에 저장된 기존 워크플로 데이터는 유지됩니다.',
       },
-    ],
-    sources: [
-      { title: 'Cloudflare Docs · Quick Tunnels', url: 'https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/' },
-      { title: 'n8n Docs · 사용자 관리 초기화', url: 'https://docs.n8n.io/deploy/host-n8n/configure-n8n/use-the-command-line/#user-management' },
-      { title: 'n8n · 사용자 초기화와 기존 워크플로·자격 증명 처리 코드', url: 'https://github.com/n8n-io/n8n/blob/master/packages/cli/src/commands/user-management/reset.ts' },
     ],
   }

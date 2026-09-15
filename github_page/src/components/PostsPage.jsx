@@ -126,14 +126,12 @@ export function PostsPage() {
 
 */
 
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { postCategories, posts } from '../data/posts'
 import { PostDetail } from './PostDetail'
 import { PostList } from './PostList'
 
-export function PostsPage() {
-  const [selectedPostId, setSelectedPostId] = useState('')
-  const [activeCategory, setActiveCategory] = useState('전체')
+export function PostsPage({ activeCategory, selectedPostId, onCategoryChange, onPostChange }) {
   const workspace = useRef(null)
   const selectedPost = posts.find((post) => post.id === selectedPostId)
   const categories = ['전체', ...new Set([...postCategories, ...posts.map((post) => post.topic || post.category)])]
@@ -142,12 +140,11 @@ export function PostsPage() {
     : posts.filter((post) => (post.topic || post.category) === activeCategory)
 
   function selectCategory(category) {
-    setActiveCategory(category)
-    setSelectedPostId('')
+    onCategoryChange(category)
   }
 
   function selectPost(id) {
-    setSelectedPostId(id)
+    onPostChange(id)
     requestAnimationFrame(() => {
       const target = id
         ? workspace.current?.querySelector('.post-detail-title')
@@ -161,7 +158,7 @@ export function PostsPage() {
     <section className="posts-workspace" ref={workspace}>
       <div className="posts-layout">
         <aside className="posts-sidebar">
-          <h3>카테고리</h3>
+          <h3>Category</h3>
           <nav aria-label="게시글 카테고리">
             {categories.map((category) => (
               <button

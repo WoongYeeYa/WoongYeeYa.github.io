@@ -1,4 +1,4 @@
-import thumbnail from '../assets/post-n8n-calendar.svg'
+﻿import thumbnail from '../assets/thumbnail/post-n8n-calendar.svg'
 
 import workflowImage from '../assets/screenshot/n8n-study-2/캘린더.png'
 import sheetsImage from '../assets/screenshot/n8n-study-2/구글 시트 테스트.png'
@@ -28,7 +28,8 @@ export const n8nStudy2 = {
         "Append or update row: 행을 추가하거나 기존 행을 갱신합니다.",
         "Update row: 기존 행의 값을 수정합니다.",
         "Delete rows or columns: 시트의 행 또는 열을 삭제합니다."
-      ]
+      ],
+      "result": "Agent가 요청에 맞는 Google Sheets 도구를 선택해 행을 조회하고, 새 행 추가·기존 값 수정·행 또는 열 삭제 작업으로 연결할 수 있게 되었습니다."
     },
     {
       "title": "2. 이메일 테스트 · 이메일 작업을 처리하는 전담 Agent",
@@ -41,7 +42,8 @@ export const n8nStudy2 = {
         "Get many messages in Gmail: 메시지 목록을 조회합니다.",
         "Send Email: 이메일을 작성해 전송합니다.",
         "Delete Email: 지정한 메시지를 삭제합니다."
-      ]
+      ],
+      "result": "외부 워크플로의 입력이 이메일 Agent로 전달되고, 요청에 따라 Gmail 메시지 조회·메일 전송·메일 삭제 작업을 수행하는 흐름이 완성되었습니다."
     },
     {
       "title": "3. 캘린더 비서 · 일정과 연락처 조회",
@@ -55,15 +57,8 @@ export const n8nStudy2 = {
         "CreateEvent: 새 일정을 생성합니다.",
         "EventDelete: 지정한 일정을 삭제합니다.",
         "Google Sheets 조회: 팀 연락처 시트의 행 데이터를 가져옵니다."
-      ]
+      ],
+      "result": "채팅 요청을 기준으로 캘린더 일정을 조회·생성·삭제하고, 필요한 연락처 정보는 Google Sheets에서 가져오는 비서 흐름이 구성되었습니다."
     }
-  ],
-  sources: [
-    { title: 'n8n Docs · Google Sheets', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/' },
-    { title: 'n8n Docs · Gmail', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.gmail/' },
-    { title: 'n8n Docs · Execute Sub-workflow Trigger', url: 'https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflowtrigger/' },
-    { title: 'n8n Docs · AI Agent', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent' },
-    { title: 'n8n Docs · Google Calendar 이벤트 작업', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlecalendar/event-operations' },
-    { title: 'n8n Docs · Simple Memory', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorybufferwindow' },
   ],
 }

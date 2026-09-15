@@ -18,6 +18,15 @@
 .study-note ul { margin: 12px 0 0; padding-left: 22px; }
 .study-note li + li { margin-top: 8px; }
 .study-command { padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow-wrap: anywhere; }
+.execution-result { margin-top: 18px; padding: 16px 18px; border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 7px 7px 0; }
+.execution-result strong { color: var(--text-strong); }
+.execution-result p { margin: 6px 0 0; }
+.source-example-list { display: grid; gap: 16px; margin-top: 20px; }
+.source-example { padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+.source-example h5 { margin: 0; font-size: 17px; color: var(--text-strong); }
+.source-example p { line-height: 1.75; }
+.source-example pre { margin: 16px 0 0; padding: 18px; overflow-x: auto; background: #111827; color: #e5e7eb; border-radius: 7px; font-size: 14px; line-height: 1.65; tab-size: 2; }
+.source-example code { font-family: Consolas, 'Courier New', monospace; }
 
 .posts-heading-row {
   display: grid;

@@ -1,4 +1,4 @@
-import thumbnail from '../assets/post-open-webui.svg'
+﻿import thumbnail from '../assets/thumbnail/post-open-webui.svg'
 import backendSetup from '../assets/screenshot/open-webui/open webui 1.png'
 import backendPackages from '../assets/screenshot/open-webui/open webui 2.png'
 import backendStartup from '../assets/screenshot/open-webui/open webui 3.png'

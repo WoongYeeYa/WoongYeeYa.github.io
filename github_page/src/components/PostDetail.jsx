@@ -60,6 +60,18 @@ export function PostDetail({ onBack, post }) {
                     {note.steps?.length > 0 && <ol>{note.steps.map((step) => <li key={step}>{step}</li>)}</ol>}
                     {note.command && <p className="study-command"><strong><code>{note.command}</code></strong></p>}
                     {note.afterParagraphs?.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+                    {note.result && <div className="execution-result"><strong>실행 결과</strong><p>{note.result}</p></div>}
+                    {note.examples?.length > 0 && (
+                      <div className="source-example-list">
+                        {note.examples.map((example) => (
+                          <article className="source-example" key={example.title}>
+                            <h5>{example.title}</h5>
+                            <p>{example.description}</p>
+                            <pre><code>{example.code}</code></pre>
+                          </article>
+                        ))}
+                      </div>
+                    )}
                   </section>
                 ))}
               </div>
@@ -71,12 +83,6 @@ export function PostDetail({ onBack, post }) {
         <aside className="study-note" aria-label="실습 소스 다운로드">
           <h4>실습 소스</h4>
           <ul>{post.downloads.map((file) => <li key={file.filename}><a className="resume-project-link" href={file.url} download={file.filename}>{file.title} 다운로드</a></li>)}</ul>
-        </aside>
-      )}
-      {post.sources?.length > 0 && (
-        <aside className="study-note" aria-label="참고 자료">
-          <h4>참고 자료</h4>
-          <ul>{post.sources.map((source) => <li key={source.url}><a className="resume-project-link" href={source.url}>{source.title}</a></li>)}</ul>
         </aside>
       )}
       <button className="secondary-button" onClick={onBack} type="button">← 다른 기록 보기</button>

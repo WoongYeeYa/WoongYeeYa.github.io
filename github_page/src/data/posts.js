@@ -9,17 +9,17 @@ import { openWebuiStudy, openWebuiStudy2 } from './openWebuiStudy'
 import { javaStudies } from './javaStudies'
 
 // 정적 게시글: thumbnail과 sections의 여섯 항목을 수정해 글을 관리합니다.
-export const postCategories = ['AI', '코딩', '일상·기록']
+export const postCategories = ['AI', '코딩','개발 도구', '웹 개발', '기타']
 
 export const posts = [
-  openWebuiStudy2,
-  openWebuiStudy,
-  discordGeminiBot,
-  templateTransferTool,
-  n8nStudy5,
+    n8nStudy5,
   n8nStudy4,
   n8nStudy3,
   n8nStudy2,
   n8nStudy1,
+  openWebuiStudy2,
+  openWebuiStudy,
+  discordGeminiBot,
+  templateTransferTool,
     ...javaStudies
 ]
