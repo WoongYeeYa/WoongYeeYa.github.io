@@ -35,7 +35,6 @@ export function HeroSection({ onPostsClick }) {
         <aside className="resume-contact" aria-label="연락처">
           <div className="resume-profile-photo">
             <img src={profileImage} alt={`${resume.name} 프로필 사진`} />
-            <span>PERSONAL PROFILE</span>
           </div>
           <dl>
             <div><dt>GitHub</dt><dd><a href={resume.github}>@{resume.handle} ↗</a></dd></div>

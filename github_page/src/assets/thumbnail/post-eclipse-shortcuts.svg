@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#29243d"/>
+  <g font-family="Arial, 'Malgun Gothic', sans-serif" fill="#f3efff" text-anchor="middle" font-weight="700">
+    <text x="400" y="210" font-size="68">Eclipse</text>
+    <text x="400" y="285" font-size="48">단축키 정리</text>
+  </g>
+</svg>
