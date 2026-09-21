@@ -14,7 +14,6 @@ import { eclipseShortcuts } from './eclipseShortcuts'
 export const postCategories = ['AI', '코딩','개발 도구', '웹 개발', '기타']
 
 export const posts = [
-  eclipseShortcuts,
     n8nStudy5,
   n8nStudy4,
   n8nStudy3,
@@ -25,5 +24,6 @@ export const posts = [
   discordGeminiBot,
   aiGlossary,
   templateTransferTool,
+  eclipseShortcuts,
     ...javaStudies
 ]
