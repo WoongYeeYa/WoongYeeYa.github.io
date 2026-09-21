@@ -1,4 +1,5 @@
 ﻿import { resume } from '../data/resume'
+import profileImage from '../assets/screenshot/ㅇㅅㅇ.jpg'
 
 function Timeline({ entries, emptyText }) {
   if (!entries.length) return <p className="resume-placeholder">{emptyText}</p>
@@ -32,7 +33,10 @@ export function HeroSection({ onPostsClick }) {
           </div>
         </div>
         <aside className="resume-contact" aria-label="연락처">
-          <div className="resume-monogram" aria-hidden="true">WY<span>PERSONAL PROFILE</span></div>
+          <div className="resume-profile-photo">
+            <img src={profileImage} alt={`${resume.name} 프로필 사진`} />
+            <span>PERSONAL PROFILE</span>
+          </div>
           <dl>
             <div><dt>GitHub</dt><dd><a href={resume.github}>@{resume.handle} ↗</a></dd></div>
             <div><dt>Email</dt><dd>{resume.email ? <a href={`mailto:${resume.email}`}>{resume.email}</a> : '작성 예정'}</dd></div>
